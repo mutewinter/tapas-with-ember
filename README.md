@@ -8,11 +8,10 @@ Rails.vim support.
 
 * [Brunch][]
 * [Ember][]
+* [Stylus][]
 * [Handlebars](http://handlebarsjs.com)
-* [jQuery](http://jquery.com)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
-* [Stylus][]
 * _Optional_ [Ember Data][]
 * _Optional_ [Ember Model][]
 
