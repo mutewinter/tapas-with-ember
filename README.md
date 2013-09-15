@@ -19,10 +19,12 @@ Rails.vim support.
 ## Features
 
 * **Ember Install Script** - [Cakefile scripts](Cakefile) to install the latest
-  Ember and Ember Data.
+  Ember, Ember Data, and Ember Model.
 * **Environments** - Custom code to allow for environment detection
   in the browser and at compile time. Automagically uses Ember's production
   build when in production just like [ember-rails][].
+* **Automatic File Loading** - Automatically loads you code, no script tags or
+  superfluous requires necessary.
 * **[Rails.vim] support** - Navigate between models and controllers with ease.
 
 **Brunch Plugins**
