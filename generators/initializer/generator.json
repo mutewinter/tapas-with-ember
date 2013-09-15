@@ -1,0 +1,11 @@
+{
+  "name": "initializer",
+  "description": "An Ember initializer",
+  "files": [
+    {
+      "from": "initializer.coffee.hbs",
+      "to": "app/initializers/{{name}}.coffee"
+    }
+  ],
+  "dependencies": []
+}

@@ -1,0 +1,5 @@
+module.exports = Ember.Application.initializer
+  name: '{{name}}'
+
+  initialize: (container, application) ->
+    container.register('store:main', application.Store)

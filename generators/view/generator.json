@@ -1,0 +1,11 @@
+{
+  "name": "view",
+  "description": "An Ember View",
+  "files": [
+    {
+      "from": "view.coffee.hbs",
+      "to": "app/views/{{name}}_view.coffee"
+    }
+  ],
+  "dependencies": []
+}

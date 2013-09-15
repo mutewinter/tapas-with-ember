@@ -1,0 +1,11 @@
+{
+  "name": "mixin",
+  "description": "An Ember Mixin",
+  "files": [
+    {
+      "from": "mixin.coffee.hbs",
+      "to": "app/mixins/{{name}}.coffee"
+    }
+  ],
+  "dependencies": []
+}

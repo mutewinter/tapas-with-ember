@@ -1,0 +1,11 @@
+{
+  "name": "route",
+  "description": "An Ember Route",
+  "files": [
+    {
+      "from": "route.coffee.hbs",
+      "to": "app/routes/{{name}}_route.coffee"
+    }
+  ],
+  "dependencies": []
+}

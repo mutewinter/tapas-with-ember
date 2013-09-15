@@ -1,0 +1,15 @@
+{
+  "name": "component",
+  "description": "An Ember Component",
+  "files": [
+    {
+      "from": "component.coffee.hbs",
+      "to": "app/components/{{name}}_component.coffee"
+    },
+    {
+      "from": "component.hbs.hbs",
+      "to": "app/templates/components/{{name}}.hbs"
+    }
+  ],
+  "dependencies": []
+}

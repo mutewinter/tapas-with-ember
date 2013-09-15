@@ -1,0 +1,11 @@
+{
+  "name": "controller",
+  "description": "An Ember Object Controller",
+  "files": [
+    {
+      "from": "controller.coffee.hbs",
+      "to": "app/controllers/{{name}}_controller.coffee"
+    }
+  ],
+  "dependencies": []
+}

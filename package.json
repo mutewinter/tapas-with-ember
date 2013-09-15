@@ -1,0 +1,31 @@
+{
+  "author": "Jeremy Mack @mutewinter",
+  "name": "tapas-with-ember",
+  "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Rails.vim support.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mutewinter/tapas-with-ember",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mutewinter/tapas-with-ember.git"
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  },
+  "dependencies": {
+    "javascript-brunch": "~1.5.1",
+    "coffee-script-brunch": "~1.5.1",
+    "css-brunch": "~1.5.1",
+    "stylus-brunch": "~1.5.1",
+    "uglify-js-brunch": "~1.5.1",
+    "clean-css-brunch": "~1.5.1",
+    "auto-reload-brunch": "~1.5.2",
+    "ember-handlebars-brunch": "git://github.com/jpadilla/ember-handlebars-brunch.git"
+  },
+  "devDependencies": {
+    "karma": "~0.10.2",
+    "karma-qunit": "*"
+  }
+}

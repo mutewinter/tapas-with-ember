@@ -1,0 +1,11 @@
+{
+  "name": "template",
+  "description": "An Ember Handlebars template",
+  "files": [
+    {
+      "from": "template.hbs.hbs",
+      "to": "app/templates/{{name}}.hbs"
+    }
+  ],
+  "dependencies": []
+}

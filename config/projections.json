@@ -1,0 +1,56 @@
+{
+  "app/config/app.coffee": {
+    "command": "app"
+  },
+  "app/assets/*": {
+    "command": "asset"
+  },
+  "app/controllers/*_controller.coffee": {
+    "command": "controller",
+    "alternate": "app/models/%s.coffee",
+    "template": "module.exports = App.%SController = Ember.ObjectController.extend\n  content: null"
+  },
+  "app/helpers/*_helper.coffee": {
+    "command": "helper",
+    "template": "module.exports = Ember.Handlebars.helper('fullName', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName')"
+  },
+  "app/initialize.coffee": {
+    "command": "initialize"
+  },
+  "app/initializers/*.coffee": {
+    "command": "initializer",
+    "template": "module.exports = Ember.Application.initializer\n  name: '%s'\n\n  initialize: (container, application) ->\n    container.register('store:main', application.Store)"
+  },
+  "app/mixins/*.coffee": {
+    "command": "mixin",
+    "template": "module.exports = App.%S = Ember.Mixin.create\n  # Functions and things. You know, code."
+  },
+  "app/models/*.coffee": {
+    "command": "model",
+    "alternate": "app/controllers/%s_controller.coffee",
+    "template": "module.exports = App.%S = DS.Model.extend\n  # Functions and things. You know, code."
+  },
+  "app/routes/*_route.coffee": {
+    "command": "route",
+    "alternate": "app/controllers/%s.coffee",
+    "related": "app/templates/%s.hbs",
+    "template": "module.exports = App.{{#camelize}}{{name}}{{/camelize}}Route = Ember.Route.extend\n  setupController: (controller) ->"
+  },
+  "app/stylesheets/*.styl": {
+    "command": "stylesheet"
+  },
+  "app/templates/*.hbs": {
+    "command": "template",
+    "alternate": "app/views/%s_view.coffee",
+    "template": "Template for %s"
+  },
+  "test/*_test.coffee": {
+    "command": "test",
+    "alternate": "<p>%s Template</p>"
+  },
+  "app/views/*_view.coffee": {
+    "command": "view",
+    "alternate": "app/controllers/%s_controller.coffee",
+    "template": "module.exports = App.%SView = Ember.View.extend\n  templateName: '{{name}}'"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "model",
+  "description": "An Ember Data Model",
+  "files": [
+    {
+      "from": "model.coffee.hbs",
+      "to": "app/models/{{name}}.coffee"
+    }
+  ],
+  "dependencies": []
+}

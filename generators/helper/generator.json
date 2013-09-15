@@ -1,0 +1,11 @@
+{
+  "name": "helper",
+  "description": "An Ember Handlebars Helper",
+  "files": [
+    {
+      "from": "helper.coffee.hbs",
+      "to": "app/helpers/{{name}}.coffee"
+    }
+  ],
+  "dependencies": []
+}
