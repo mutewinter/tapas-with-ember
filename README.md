@@ -108,10 +108,6 @@ scaffolt template <name>          →    app/<name>.hbs
 scaffolt view <name>              →    app/views/<name>_view.coffee
 ```
 
-There are more commands you can do with scaffolt and also instruction on how to
-create your own generators, so make sure you check out the
-[docs](https://github.com/paulmillr/scaffolt#readme).
-
 ## Compiling for Production
 
 Both the development and production versions of [Ember][] are installed via
