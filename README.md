@@ -117,7 +117,7 @@ version of Ember, run the following command:
 
 ## Scripts
 
-The following [`cake`](/Cakefile) scripts are provied.
+The following [`cake`](/Cakefile) scripts are provided.
 
 ```
 cake server               # start the brunch server in development
