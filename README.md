@@ -49,6 +49,14 @@ brunch new gh:mutewinter/tapas-with-ember <appname>
 cd <appname>
 ```
 
+## Quick Start
+
+Tapas with Ember is ready to go with Ember 1.0 out of the box. Just run `cake
+server` and your live-updating server will be running on
+[`localhost:3333`](http://localhost:3333).
+
+## Updating Libraries
+
 **Install Latest Ember**
 
 ```bash
@@ -57,33 +65,24 @@ cake ember:install
 # cake -c "canary" ember:install # for canary
 ```
 
-_Optional_ -- **Install Latest Ember Data Beta**
+**Install Latest Ember Data Beta**
 
 ```bash
 cake ember-data:install
 # cake -c "canary" ember:install # for canary
 ```
 
-_Optional_ -- **Install Latest Ember Model**
+**Install Latest Ember Model**
 
 ```bash
 cake ember-model:install
 ```
 
-_Optional_ -- **Install Latest Handlebars**
+**Install Latest Handlebars**
 
 ```bash
 cake handlebars:install
 ```
-
-**Start the Brunch Server**
-
-```
-cake server
-```
-
-Open [http://localhost:3333](http://localhost:3333) on your browser and your
-starter Ember app will be running!
 
 ## Generators
 
