@@ -188,7 +188,7 @@ Rview <name>       → app/views/<name>_view.coffee
 
 All of brunch-with-tapas is licensed under the MIT license.
 
-Copyright (c) 2013 Jeremy Mack
+Copyright © 2013 Jeremy Mack
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
