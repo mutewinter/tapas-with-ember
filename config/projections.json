@@ -34,7 +34,7 @@
     "command": "route",
     "alternate": "app/controllers/%s.coffee",
     "related": "app/templates/%s.hbs",
-    "template": "module.exports = App.{{#camelize}}{{name}}{{/camelize}}Route = Ember.Route.extend\n  setupController: (controller) ->"
+    "template": "module.exports = App.%SRoute = Ember.Route.extend\n  setupController: (controller) ->"
   },
   "app/stylesheets/*.styl": {
     "command": "stylesheet"
