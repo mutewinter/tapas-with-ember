@@ -12,7 +12,8 @@
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "scripts": {
-    "start": "brunch watch --server"
+    "start": "brunch watch --server",
+    "postinstall": "cake ember:install"
   },
   "dependencies": {
     "javascript-brunch": "~1.5.1",
