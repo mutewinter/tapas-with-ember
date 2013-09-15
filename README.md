@@ -34,7 +34,7 @@ Rails.vim support.
 ## Requirements
 
 Before using Tapas with Ember you will need to install [Node][] and
-[Brunch 1.7 or above][].
+[Brunch][] 1.7 or above.
 
 ```
 npm install -g brunch
