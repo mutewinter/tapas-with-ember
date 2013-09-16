@@ -41,20 +41,25 @@ Before using Tapas with Ember you will need to install [Node][] and
 npm install -g brunch
 ```
 
-## Getting Started
+## Quick Start
 
-Now you are ready to make your first skeleton.
+Now that you've got Brunch installed, you're three commands away from a running
+Ember app!
 
 ```bash
 brunch new gh:mutewinter/tapas-with-ember <appname>
 cd <appname>
+cake server
 ```
 
-## Quick Start
+Open [`localhost:3333`](http://localhost:3333) and check out your brand new
+Ember app! Code changes you make will be automatically loaded in the browser.
+Edit [`index_route.coffee`](app/routes/index_route.coffee) to see live-updating
+in action.
 
-Tapas with Ember is ready to go with Ember 1.0 out of the box. Just run `cake
-server` and your live-updating server will be running on
-[`localhost:3333`](http://localhost:3333).
+Tapas with Ember runs Ember 1.0 out of the box. You can update to Beta or
+Canary builds using the command below. It's also easy to install the latest
+Ember Data or Ember Model using the `cake` scripts below.
 
 ## Updating Libraries
 
