@@ -186,8 +186,8 @@ A [`projections.json`](/config/projections.json) file is specified for
 
 ## Thanks To
 
-* @gcollazo for making [brunch-with-ember-reloaded][], which tapas-with-ember
-  is based on.
+* [@gcollazo](https://github.com/gcollazo) for making
+  [brunch-with-ember-reloaded][], which Tapas with Ember is based on.
 
 ## License
 
