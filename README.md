@@ -134,7 +134,7 @@ cake ember-model:install  # install latest Ember Model
 cake handlebars:install   # install latest Handlebars
 ```
 
-## Pox.cx
+## Pow.cx
 
 To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 
