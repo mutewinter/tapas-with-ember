@@ -170,18 +170,18 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Rails.vim][] support. You can navigate to files via these commands:
 
 ```
-Rapp               → app/config/app.coffee
-Rasset <name>      → app/assets/<name>
-Rcontroller <name> → app/controllers/<name>_controller.coffee
-Rhelper <name>     → app/helpers/<name>_helper.coffee
-Rinitialize        → app/initialize.coffee
-Rmixin <name>      → app/mixins/<name>.coffee
-Rmodel <name>      → app/models/<name>.coffee
-Rroute <name>      → app/routes/<name>_route.coffee
-Rstylesheet <name> → app/stylesheets/<name>.styl
-Rtemplate <name>   → app/template/<name>.hbs
-Rtest <name>       → test/<name>
-Rview <name>       → app/views/<name>_view.coffee
+:Rapp               → app/config/app.coffee
+:Rasset <name>      → app/assets/<name>
+:Rcontroller <name> → app/controllers/<name>_controller.coffee
+:Rhelper <name>     → app/helpers/<name>_helper.coffee
+:Rinitialize        → app/initialize.coffee
+:Rmixin <name>      → app/mixins/<name>.coffee
+:Rmodel <name>      → app/models/<name>.coffee
+:Rroute <name>      → app/routes/<name>_route.coffee
+:Rstylesheet <name> → app/stylesheets/<name>.styl
+:Rtemplate <name>   → app/template/<name>.hbs
+:Rtest <name>       → test/<name>
+:Rview <name>       → app/views/<name>_view.coffee
 ```
 
 ## Thanks To
