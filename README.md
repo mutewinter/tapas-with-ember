@@ -227,3 +227,7 @@ SOFTWARE.
 [Ember Data]: https://github.com/emberjs/data
 [Ember Model]: https://github.com/ebryn/ember-model
 [scaffolt]: https://github.com/paulmillr/scaffolt
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
