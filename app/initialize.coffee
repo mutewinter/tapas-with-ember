@@ -10,7 +10,7 @@ folderOrder = [
 ]
 
 folderOrder.forEach (folder) ->
-  # Go through the prefixes in order and rquire them
+  # Go through the prefixes in order and require them
   window.require.list().filter((module) ->
     new RegExp("^#{folder}/").test(module)
   ).forEach((module) -> require(module))
