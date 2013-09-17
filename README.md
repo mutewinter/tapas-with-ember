@@ -190,29 +190,7 @@ A [`projections.json`](/config/projections.json) file is specified for
 * [@gcollazo](https://github.com/gcollazo) for making
   [brunch-with-ember-reloaded][], which Tapas with Ember is based on.
 
-## License
-
-All of brunch-with-tapas is licensed under the MIT license.
-
-Copyright © 2013 Jeremy Mack
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [brunch-with-ember-reloaded]: https://github.com/gcollazo/brunch-with-ember-reloaded
 [Stylus]: http://learnboost.github.io/stylus/
@@ -227,7 +205,3 @@ SOFTWARE.
 [Ember Data]: https://github.com/emberjs/data
 [Ember Model]: https://github.com/ebryn/ember-model
 [scaffolt]: https://github.com/paulmillr/scaffolt
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
