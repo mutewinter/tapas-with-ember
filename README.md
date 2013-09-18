@@ -1,8 +1,8 @@
 # Tapas with Ember
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
-installation scripts, environment-specific JS builds, generators, and Rails.vim
-support.
+installation scripts, environment-specific JS builds, generators, and
+[Rails.vim][] support.
 
 ## Technology
 
