@@ -8,6 +8,7 @@ installation scripts, environment-specific JS builds, generators, and
 
 * [Brunch][]
 * [Ember][]
+* [CoffeeScript][]
 * [Stylus][]
 * [Handlebars](http://handlebarsjs.com)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
