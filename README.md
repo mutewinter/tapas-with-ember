@@ -25,7 +25,7 @@ installation scripts, environment-specific JS builds, generators, and
   build when in production just like [ember-rails][].
 * **Automatic File Loading** - Automatically loads you code, no script tags or
   superfluous requires necessary.
-* **[Rails.vim] support** - Navigate to and create models, controllers,
+* **[Rails.vim][] support** - Navigate to and create models, controllers,
   templates, and views with ease.
 
 **Brunch Plugins**
