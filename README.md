@@ -4,7 +4,12 @@ A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific JS builds, generators, and
 [Rails.vim][] support.
 
-[![Me talking about Tapas with Ember][yti]][yt]
+<p align="center">
+  <a href="http://www.youtube.com/watch?v=BP7lTpNfkyU">
+    <img src="http://i.imgur.com/KxXQFtp.png"
+    alt="Me talking about Tapas with Ember">
+  </a>
+</p>
 
 ## Technology
 
@@ -208,5 +213,3 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Ember Data]: https://github.com/emberjs/data
 [Ember Model]: https://github.com/ebryn/ember-model
 [scaffolt]: https://github.com/paulmillr/scaffolt
-[yt]: http://www.youtube.com/watch?v=BP7lTpNfkyU
-[yti]: http://i.imgur.com/KxXQFtp.png
