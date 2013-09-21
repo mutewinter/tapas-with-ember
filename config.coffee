@@ -36,6 +36,17 @@ exports.config =
       root: 'templates'
       joinTo: 'javascripts/app.js' : /^app/
 
+  # allow _ prefixed templates so partials work
+  conventions:
+    ignored: (path) ->
+      startsWith = (string, substring) ->
+        string.indexOf(substring, 0) is 0
+      sep = sysPath.sep
+      if path.indexOf("app#{sep}templates#{sep}") is 0
+        false
+      else
+        startsWith sysPath.basename(path), '_'
+
   overrides:
     production:
       optimize: true
