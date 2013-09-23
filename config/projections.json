@@ -51,6 +51,6 @@
   "app/views/*_view.coffee": {
     "command": "view",
     "alternate": "app/controllers/%s_controller.coffee",
-    "template": "module.exports = App.%SView = Ember.View.extend\n  templateName: '{{name}}'"
+    "template": "module.exports = App.%SView = Ember.View.extend\n  templateName: '%s'"
   }
 }
