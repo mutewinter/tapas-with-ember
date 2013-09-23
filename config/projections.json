@@ -36,6 +36,9 @@
     "related": "app/templates/%s.hbs",
     "template": "module.exports = App.%SRoute = Ember.Route.extend\n  setupController: (controller) ->"
   },
+  "app/config/router.coffee": {
+    "command": "router"
+  },
   "app/stylesheets/*.styl": {
     "command": "stylesheet"
   },

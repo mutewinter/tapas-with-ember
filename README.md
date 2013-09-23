@@ -117,6 +117,7 @@ scaffolt initializer <name>       →    app/initializers/<name>.coffee
 scaffolt mixin <name>             →    app/mixins/<name>_mixin.coffee
 scaffolt model <name>             →    app/models/name.coffee
 scaffolt route <name>             →    app/routes/<name>_route.coffee
+scaffolt router                   →    app/config/router.coffee
 scaffolt template <name>          →    app/<name>.hbs
 scaffolt view <name>              →    app/views/<name>_view.coffee
 ```
