@@ -70,6 +70,10 @@ Tapas with Ember runs Ember 1.0 out of the box. You can update to Beta or
 Canary builds using the command below. It's also easy to install the latest
 Ember Data or Ember Model using the `cake` scripts below.
 
+## Frequently Asked Questions
+
+See [the FAQ][] in the Wiki.
+
 ## Updating Libraries
 
 **Install Latest Ember**
@@ -214,3 +218,4 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Ember Data]: https://github.com/emberjs/data
 [Ember Model]: https://github.com/ebryn/ember-model
 [scaffolt]: https://github.com/paulmillr/scaffolt
+[the FAQ]: https://github.com/mutewinter/tapas-with-ember/wiki/FAQ
