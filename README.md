@@ -40,6 +40,8 @@ installation scripts, environment-specific JS builds, generators, and
 * **[auto-reload-brunch][]** - Adds automatic browser reloading support to
   Brunch.
 * **[uglify-js-brunch][]** - Adds UglifyJS minification support to Brunch.
+* **[gzip-brunch][]** - Automatically generate gzipped versions of your assets
+  in your production build.
 
 ## Requirements
 
@@ -209,6 +211,7 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Stylus]: http://learnboost.github.io/stylus/
 [CoffeeScript]: http://coffeescript.org/
 [auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
+[gzip-brunch]: https://github.com/banyan/gzip-brunch
 [Brunch]: http://brunch.io
 [Ember]: http://emberjs.com
 [uglify-js-brunch]: https://github.com/brunch/uglify-js-brunch
