@@ -1,10 +1,11 @@
 {
-  "author": { "name" : "Jeremy Mack",
-    "email" : "@mutewinter",
-    "url" : "http://twitter.com/mutewinter"
-  },
   "name": "tapas-with-ember",
   "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Rails.vim support.",
+  "author": {
+    "name": "Jeremy Mack",
+    "email": "@mutewinter",
+    "url": "http://twitter.com/mutewinter"
+  },
   "version": "1.0.0",
   "homepage": "https://github.com/mutewinter/tapas-with-ember",
   "repository": {
