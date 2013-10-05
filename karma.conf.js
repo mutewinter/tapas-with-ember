@@ -7,6 +7,9 @@ module.exports = function(config) {
     // base path, that will be used to resolve files and exclude
     basePath: '',
 
+    preprocessors: {
+      '**/*.coffee': ['coffee'],
+    },
 
     // frameworks to use
     frameworks: ['qunit'],

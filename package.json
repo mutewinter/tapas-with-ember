@@ -32,7 +32,10 @@
     "gzip-brunch": "~1.0.0"
   },
   "devDependencies": {
-    "karma": "~0.10.2",
-    "karma-qunit": "*"
+    "karma": "~0.10",
+    "karma-qunit": "*",
+    "karma-coffee-preprocessor": "~0.1",
+    "karma-phantomjs-launcher": "~0.1",
+    "qunitjs": "*"
   }
 }
