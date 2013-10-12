@@ -58,11 +58,8 @@
     "template": "module.exports = %SAdapter = DS.RESTAdapter.extend\n  \n\n"
   },
 
-  "app/config/app.coffee": {
-    "type": "app"
-  },
-  "app/config/router.coffee": {
-    "type": "router"
+  "app/config/*": {
+    "type": "config"
   },
   "app/initialize.coffee": {
     "type": "initialize"
