@@ -186,18 +186,18 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Ember.vim][] support. You can navigate to files via these commands:
 
 ```
-:Rapp               → app/config/app.coffee
-:Rasset <name>      → app/assets/<name>
-:Rcontroller <name> → app/controllers/<name>_controller.coffee
-:Rhelper <name>     → app/helpers/<name>_helper.coffee
-:Rinitialize        → app/initialize.coffee
-:Rmixin <name>      → app/mixins/<name>.coffee
-:Rmodel <name>      → app/models/<name>.coffee
-:Rroute <name>      → app/routes/<name>_route.coffee
-:Rstylesheet <name> → app/stylesheets/<name>.styl
-:Rtemplate <name>   → app/template/<name>.hbs
-:Rtest <name>       → test/<name>
-:Rview <name>       → app/views/<name>_view.coffee
+:Eapp               → app/config/app.coffee
+:Easset <name>      → app/assets/<name>
+:Econtroller <name> → app/controllers/<name>_controller.coffee
+:Ehelper <name>     → app/helpers/<name>_helper.coffee
+:Einitialize        → app/initialize.coffee
+:Emixin <name>      → app/mixins/<name>.coffee
+:Emodel <name>      → app/models/<name>.coffee
+:Eroute <name>      → app/routes/<name>_route.coffee
+:Estylesheet <name> → app/stylesheets/<name>.styl
+:Etemplate <name>   → app/template/<name>.hbs
+:Etest <name>       → test/<name>
+:Eview <name>       → app/views/<name>_view.coffee
 ```
 
 ## Thanks To
