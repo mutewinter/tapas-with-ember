@@ -1,6 +1,6 @@
 {
   "name": "tapas-with-ember",
-  "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Rails.vim support.",
+  "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Ember.vim support.",
   "author": {
     "name": "Jeremy Mack",
     "email": "@mutewinter",

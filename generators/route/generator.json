@@ -4,7 +4,7 @@
   "files": [
     {
       "from": "route.coffee.hbs",
-      "to": "app/routes/{{name}}_route.coffee"
+      "to": "app/routes/{{name}}.coffee"
     }
   ],
   "dependencies": []

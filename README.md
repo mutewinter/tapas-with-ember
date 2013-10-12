@@ -2,7 +2,7 @@
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific JS builds, generators, and
-[Rails.vim][] support.
+[Ember.vim][] support.
 
 <p align="center">
   <a href="http://www.youtube.com/watch?v=BP7lTpNfkyU">
@@ -32,7 +32,7 @@ installation scripts, environment-specific JS builds, generators, and
   build when in production just like [ember-rails][].
 * **Automatic File Loading** - Automatically loads you code, no script tags or
   superfluous requires necessary.
-* **[Rails.vim][] support** - Navigate to and create models, controllers,
+* **[Ember.vim][] support** - Navigate to and create models, controllers,
   templates, and views with ease.
 
 **Brunch Plugins**
@@ -183,7 +183,7 @@ karma start
 ## Vim Users
 
 A [`projections.json`](/config/projections.json) file is specified for
-[Rails.vim][] support. You can navigate to files via these commands:
+[Ember.vim][] support. You can navigate to files via these commands:
 
 ```
 :Rapp               → app/config/app.coffee
@@ -215,7 +215,7 @@ A [`projections.json`](/config/projections.json) file is specified for
 [Brunch]: http://brunch.io
 [Ember]: http://emberjs.com
 [uglify-js-brunch]: https://github.com/brunch/uglify-js-brunch
-[Rails.vim]: https://github.com/tpope/vim-rails
+[Ember.vim]: https://github.com/dsawardekar/ember.vim
 [Node]: http://nodejs.org/
 [ember-rails]: https://github.com/emberjs/ember-rails
 [Ember Data]: https://github.com/emberjs/data

@@ -4,7 +4,7 @@
   "files": [
     {
       "from": "controller.coffee.hbs",
-      "to": "app/controllers/{{name}}_controller.coffee"
+      "to": "app/controllers/{{name}}.coffee"
     }
   ],
   "dependencies": []

@@ -4,7 +4,7 @@
   "files": [
     {
       "from": "component.coffee.hbs",
-      "to": "app/components/{{name}}_component.coffee"
+      "to": "app/components/{{name}}.coffee"
     },
     {
       "from": "component.hbs.hbs",

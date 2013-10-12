@@ -1,0 +1,87 @@
+{
+  "app/models/*.coffee": {
+    "type": "model",
+    "alternate": ["app/routes/%s.coffee", "app/routes/%{source|plural}.coffee", "app/routes/%{source|plural}/index.coffee"],
+    "related": ["app/controllers/%s.coffee", "app/controllers/%{source|plural}.coffee", "app/controllers/%{source|plural}/index.coffee"],
+    "test": "tests/models/%s_test.coffee"
+  },
+  "app/views/**.coffee": {
+    "type": "view",
+    "alternate": ["app/routes/%s.coffee", "app/models/%{source|mname}.coffee"],
+    "related": ["app/controllers/%s.coffee", "app/templates/%s.hbs"],
+    "test": "tests/views/%s_test.coffee",
+    "template": "module.exports = App.%SView = Ember.View.extend\n  templateName: '%s'"
+  },
+  "app/controllers/**.coffee": {
+    "type": "controller",
+    "alternate": ["app/routes/%s.coffee", "app/models/%{source|mname}.coffee"],
+    "related": ["app/templates/%s.hbs", "app/views/%s.coffee"],
+    "test": "tests/controllers/%s_test.coffee",
+    "template": "module.exports = App.%SController = Ember.ObjectController.extend\n  "
+  },
+  "app/routes/**.coffee": {
+    "type": "route",
+    "alternate": ["app/models/%{source|mname}.coffee"],
+    "related": ["app/controllers/%s.coffee", "app/templates/%s.hbs"],
+    "test": "tests/routes/%s_test.coffee",
+    "template": "module.exports = App.%SRoute = Ember.Route.extend\n  setupController: (controller) ->"
+  },
+  "app/templates/**.hbs": {
+    "type": "template",
+    "alternate": ["app/routes/%s.coffee", "app/models/%{source|mname}.coffee"],
+    "related": ["app/controllers/%s.coffee", "app/views/%s.coffee"],
+    "template": "Template for %s"
+  },
+  "app/helpers/*.coffee": {
+    "type": "helper",
+    "template": "module.exports = Ember.Handlebars.helper('fullName', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName')",
+    "test": "tests/helpers/%s_test.coffee"
+  },
+  "app/initializers/*.coffee": {
+    "type": "initializer",
+    "template": "module.exports = Ember.Application.initializer\n  name: '%s'\n\n  initialize: (container, application) ->\n    container.register('store:main', application.Store)"
+  },
+  "app/components/*.coffee": {
+    "type": "component",
+    "related": "app/templates/components/%s.hbs",
+    "test": "tests/components/%s_test.coffee",
+    "template": "module.exports = %SComponent = Ember.Component.extend\n  \n\n"
+  },
+  "app/mixins/*.coffee": {
+    "type": "mixin",
+    "template": "module.exports = App.%S = Ember.Mixin.create\n  # Functions and things. You know, code."
+  },
+
+  "app/adapters/*.coffee": {
+    "type": "adapter",
+    "test": "tests/adapters/%s.coffee",
+    "template": "module.exports = %SAdapter = DS.RESTAdapter.extend\n  \n\n"
+  },
+
+  "app/config/app.coffee": {
+    "type": "app"
+  },
+  "app/config/router.coffee": {
+    "type": "router"
+  },
+  "app/initialize.coffee": {
+    "type": "initialize"
+  },
+
+  "app/utils/*.coffee": {
+    "type": "utility",
+    "test": "tests/utility/%s.coffee",
+    "template": "module.exports = %S = () ->\n  \n\n"
+  },
+
+  "app/assets/**": {
+    "type": "asset"
+  },
+  "app/stylesheets/**": {
+    "type": "stylesheet"
+  },
+
+  "test/*_test.coffee": {
+    "type": "test"
+  }
+}
