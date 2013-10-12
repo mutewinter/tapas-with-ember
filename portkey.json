@@ -3,6 +3,7 @@
     "type": "model",
     "alternate": ["app/routes/%s.coffee", "app/routes/%{source|plural}.coffee", "app/routes/%{source|plural}/index.coffee"],
     "related": ["app/controllers/%s.coffee", "app/controllers/%{source|plural}.coffee", "app/controllers/%{source|plural}/index.coffee"],
+    "template": "module.exports = App.%S = DS.Model.extend\n  # Functions and things. You know, code.",
     "test": "tests/models/%s_test.coffee"
   },
   "app/views/**.coffee": {
