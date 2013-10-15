@@ -3,9 +3,13 @@
 window.require.list().filter (module) ->
   require(module) if new RegExp("^config/environments/").test(module)
 
-module.exports =
+module.exports = Ember.Object.extend
   name: window.BRUNCH_ENV ? 'development'
-  is: (env) ->
-    @name is env
-  isDevelopment: -> @is('development')
-  isProduction: -> @is('production')
+
+  isDevelopment: (->
+    @get('name') is 'development'
+  ).property('name')
+
+  isProduction: (->
+    @get('name') is 'production'
+  ).property('name')

@@ -1,6 +1,7 @@
-env = require 'config/environment'
+Environment = require 'config/environment'
+env = Environment.create()
 
-if env.isDevelopment()
+if env.get('isDevelopment')
   options =
     LOG_TRANSITIONS:                true
     LOG_TRANSITIONS_INTERNAL:       false
@@ -14,7 +15,7 @@ if env.isDevelopment()
     console.log(e.message)
     console.log(e.stack)
 
-  Ember.debug("Running in #{env.name} environment")
+  Ember.debug("Running in #{env.get('name')} environment")
 else
   options = {}
 
