@@ -180,24 +180,29 @@ brunch watch -s
 karma start
 ```
 
-## Vim Users
+## Ember.vim Support
 
-A [`projections.json`](/config/projections.json) file is specified for
-[Ember.vim][] support. You can navigate to files via these commands:
+Custom [Ember.vim][] support is provided via
+[`portkey.json`](/config/projections.json). You can navigate to files via these
+commands:
 
 ```
-:Eapp               → app/config/app.coffee
-:Easset <name>      → app/assets/<name>
-:Econtroller <name> → app/controllers/<name>_controller.coffee
-:Ehelper <name>     → app/helpers/<name>_helper.coffee
-:Einitialize        → app/initialize.coffee
-:Emixin <name>      → app/mixins/<name>.coffee
-:Emodel <name>      → app/models/<name>.coffee
-:Eroute <name>      → app/routes/<name>_route.coffee
-:Estylesheet <name> → app/stylesheets/<name>.styl
-:Etemplate <name>   → app/template/<name>.hbs
-:Etest <name>       → test/<name>
-:Eview <name>       → app/views/<name>_view.coffee
+:Eadapter
+:Easset <name>       → app/assets/<name>
+:Ecomponent <name>   → app/components/<name>.coffee
+:Econfig <name>      → app/config/<name>.coffee
+:Econtroller <name>  → app/controllers/<name>.coffee
+:Ehelper <name>      → app/helpers/<name>.coffee
+:Einitialize
+:Einitializer <name> → app/initializers/<name>.coffee
+:Emixin <name>       → app/mixins/<name>.coffee
+:Emodel <name>       → app/models/<name>.coffee
+:Eroute <name>       → app/routes/<name>.coffee
+:Estylesheet <name>  → app/stylesheets/<name>.styl
+:Etemplate <name>    → app/templates/<name>.hbs
+:Etest <name>        → test/<name>_test.coffee
+:Eutility <name>     → app/utility/<name>.coffee
+:Eview <name>        → app/views/<name>.coffee
 ```
 
 ## Thanks To
