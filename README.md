@@ -123,18 +123,18 @@ To use first install scaffolt globally with `npm install -g scaffolt`. Then you
 can use the following command to generate files.
 
 ```
-scaffolt arraycontroller <name>   →    app/controllers/<name>s_controller.coffee
-scaffolt component <name>         →    app/components/<name>_component.coffee
+scaffolt arraycontroller <name>   →    app/controllers/<name>s.coffee
+scaffolt component <name>         →    app/components/<name>.coffee
                                        app/templates/components/<name>.hbs
-scaffolt controller <name>        →    app/controllers/<name>_controller.coffee
+scaffolt controller <name>        →    app/controllers/<name>.coffee
 scaffolt helper <name>            →    app/helpers/<name>.coffee
 scaffolt initializer <name>       →    app/initializers/<name>.coffee
-scaffolt mixin <name>             →    app/mixins/<name>_mixin.coffee
+scaffolt mixin <name>             →    app/mixins/<name>.coffee
 scaffolt model <name>             →    app/models/name.coffee
-scaffolt route <name>             →    app/routes/<name>_route.coffee
+scaffolt route <name>             →    app/routes/<name>.coffee
 scaffolt router                   →    app/config/router.coffee
 scaffolt template <name>          →    app/<name>.hbs
-scaffolt view <name>              →    app/views/<name>_view.coffee
+scaffolt view <name>              →    app/views/<name>.coffee
 ```
 
 ## Compiling for Production
