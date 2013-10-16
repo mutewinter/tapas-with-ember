@@ -72,6 +72,15 @@ Tapas with Ember runs Ember 1.0 out of the box. You can update to Beta or
 Canary builds using the command below. It's also easy to install the latest
 Ember Data or Ember Model using the `cake` scripts below.
 
+## Deploying
+
+Tapas with Ember comes with a [Mina][] [deployment script][].
+
+1. Install Mina by running `gem install mina`
+1. Fill in your credentials in [`config/deploy.rb`][deployment script]
+1. Run `mina setup`
+1. Run `mina deploy`
+
 ## Frequently Asked Questions
 
 See [the FAQ][] in the Wiki.
@@ -227,3 +236,5 @@ commands:
 [Ember Model]: https://github.com/ebryn/ember-model
 [scaffolt]: https://github.com/paulmillr/scaffolt
 [the FAQ]: https://github.com/mutewinter/tapas-with-ember/wiki/FAQ
+[deployment script]: /config/deploy.rb
+[Mina]: http://nadarei.co/mina/
