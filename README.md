@@ -89,6 +89,9 @@ See [the FAQ][] in the Wiki.
 
 **Install Latest Ember**
 
+Tapas with Ember ships with Ember 1.1.0 already installed. You can update to
+the latest release from each channel by using the commands below.
+
 ```bash
 cake ember:install
 # cake -c "beta" ember:install # for beta
