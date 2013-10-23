@@ -1,5 +1,6 @@
 http = require 'http'
 fs = require 'fs'
+path = require 'path'
 {spawn, exec} = require 'child_process'
 
 # ----------------
@@ -8,8 +9,15 @@ fs = require 'fs'
 
 option '-P', '--production', 'run server in production mode'
 
+LOCAL_BRUNCH = path.join('.', 'node_modules', '.bin', 'brunch')
+
 spawnBrunch = (flags, env) ->
-  brunch = spawn 'brunch', flags, env
+  if fs.existsSync(LOCAL_BRUNCH)
+    brunch = spawn LOCAL_BRUNCH, flags, env
+  else
+    console.error 'Warning, using global brunch. Run `npm install`.'
+    brunch = spawn 'brunch', flags, env
+
   brunch.stdout.on 'data', (data) -> console.log data.toString().trim()
   brunch.stderr.on 'data', (data) -> console.log data.toString().trim()
 
