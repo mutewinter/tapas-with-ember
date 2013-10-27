@@ -109,7 +109,7 @@ cake ember-data:install
 # cake -c "canary" ember-data:install # for canary
 ```
 
-_Note: `cake ember-data:list` displays the tagged releases._
+_Note: `cake ember-data:list` displays all tagged releases._
 
 ### Install Latest Ember Model
 
