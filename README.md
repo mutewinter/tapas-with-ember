@@ -94,9 +94,12 @@ the latest release from each channel by using the commands below.
 
 ```bash
 cake ember:install
+# cake -t "v1.0.0" ember:install # for v1.0.0 tagged release
 # cake -c "beta" ember:install # for beta
 # cake -c "canary" ember:install # for canary
 ```
+
+_Note: `cake ember:list` displays the known tagged releases since 1.0.0._
 
 **Install Latest Ember Data Beta**
 
