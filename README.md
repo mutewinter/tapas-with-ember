@@ -87,7 +87,7 @@ See [the FAQ][] in the Wiki.
 
 ## Updating Libraries
 
-**Install Latest Ember**
+### Install Latest Ember
 
 Tapas with Ember ships with Ember 1.1.0 already installed. You can update to
 the latest release from each channel by using the commands below.
@@ -99,9 +99,9 @@ cake ember:install
 # cake -c "canary" ember:install # for canary
 ```
 
-_Note: `cake ember:list` displays the known tagged releases since 1.0.0._
+_Note: `cake ember:list` displays the tagged releases since 1.0.0._
 
-**Install Latest Ember Data Beta**
+### Install Latest Ember Data Beta
 
 ```bash
 cake ember-data:install
@@ -109,15 +109,15 @@ cake ember-data:install
 # cake -c "canary" ember-data:install # for canary
 ```
 
-_Note: `cake ember-data:list` displays the known tagged releases._
+_Note: `cake ember-data:list` displays the tagged releases._
 
-**Install Latest Ember Model**
+### Install Latest Ember Model
 
 ```bash
 cake ember-model:install
 ```
 
-**Install Latest Handlebars**
+### Install Latest Handlebars
 
 ```bash
 cake handlebars:install
