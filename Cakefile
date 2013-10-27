@@ -41,7 +41,9 @@ task 'build', 'build for production (delete public folder first)', ->
 # ------------
 
 EMBER_BASE_URL = 'http://builds.emberjs.com'
-EMBER_GITHUB_API_URL = 'https://api.github.com/repos/emberjs/ember.js/tags'
+GITHUB_API_URL = 'https://api.github.com'
+EMBER_GITHUB_API_URL = "#{GITHUB_API_URL}/repos/emberjs/ember.js/tags"
+EMBER_DATA_GITHUB_API_URL = "#{GITHUB_API_URL}/repos/emberjs/data/tags"
 EMBER = {}
 EMBER_DATA = {}
 ['release', 'beta', 'canary'].forEach (build) ->
@@ -56,6 +58,10 @@ EMBER['tag'] =
   prod: "#{EMBER_BASE_URL}/tags/{{tag}}/ember.prod.js"
   dev: "#{EMBER_BASE_URL}/tags/{{tag}}/ember.js"
 
+EMBER_DATA['tag'] =
+  prod: "#{EMBER_BASE_URL}/tags/{{tag}}/ember-data.prod.js"
+  dev: "#{EMBER_BASE_URL}/tags/{{tag}}/ember-data.js"
+
 downloadFile = (src, dest) ->
   file = fs.createWriteStream(dest)
   request = http.get src, (response) ->
@@ -63,6 +69,33 @@ downloadFile = (src, dest) ->
 
 downloadEmberFile = (src, dest) ->
   downloadFile(src, "vendor/ember/#{dest}")
+
+listTags = (githubUrl, since, name, command) ->
+  request = https.get githubUrl, (response) ->
+    data = ''
+    response.on 'data', (chunk) -> data += chunk
+    response.on 'end', ->
+      tags = JSON.parse(data)
+      console.log "Tagged #{name} Releases:"
+      for tag in tags
+        if semver.valid(tag.name) and !semver.lt(tag.name, since)
+          firstTag = tag.name unless firstTag
+          console.log "  #{tag.name}"
+      console.log "Install with cake -t \"#{firstTag}\" #{command}"
+
+installEmberFiles = (project, filename, options) ->
+  if 'tag' of options
+    # Download a Tag
+    tag = options.tag
+    downloadEmberFile(project['tag'].dev.replace(/{{tag}}/, tag),
+      "development/#{filename}")
+    downloadEmberFile(project['tag'].prod.replace(/{{tag}}/, tag),
+      "production/#{filename}")
+  else
+    # Download a Channel
+    channel = options.channel ? 'release'
+    downloadEmberFile project[channel].dev, "development/#{filename}"
+    downloadEmberFile project[channel].prod, "production/#{filename}"
 
 # Channel
 option '-c', '--channel "[CHANNEL_NAME]"',
@@ -72,40 +105,28 @@ option '-c', '--channel "[CHANNEL_NAME]"',
 option '-t', '--tag "[TAG_NAME]"',
   'a tagged release to install. Run cake ember:list to see known tags'
 
+# -----
 # Ember
+# -----
 task 'ember:install', 'install latest Ember', (options) ->
-  if 'tag' of options
-    # Download a Tag
-    tag = options.tag
-    downloadEmberFile(EMBER['tag'].dev.replace(/{{tag}}/, tag),
-      'development/ember.js')
-    downloadEmberFile(EMBER['tag'].prod.replace(/{{tag}}/, tag),
-      'production/ember.js')
-  else
-    # Download a Channel
-    channel = options.channel ? 'release'
-    downloadEmberFile EMBER[channel].dev, 'development/ember.js'
-    downloadEmberFile EMBER[channel].prod, 'production/ember.js'
+  installEmberFiles(EMBER, 'ember.js', options)
 
 task 'ember:list', 'list tagged relases of Ember since v1.0.0', (options) ->
-  request = https.get EMBER_GITHUB_API_URL, (response) ->
-    data = ''
-    response.on 'data', (chunk) -> data += chunk
-    response.on 'end', ->
-      tags = JSON.parse(data)
-      console.log 'Tagged Ember Releases:'
-      for tag in tags
-        if semver.valid(tag.name) and !semver.lt(tag.name, 'v1.0.0')
-          console.log "  #{tag.name}"
-      console.log 'Install with cake -t "v1.0.0" ember:install'
+  listTags EMBER_GITHUB_API_URL, 'v1.0.0', 'Ember', 'ember:install'
 
-# Ember
+# ----------
+# Ember Data
+# ----------
 task 'ember-data:install', 'install latest Ember Data', (options) ->
-  channel = options.channel ? 'beta'
-  downloadEmberFile EMBER_DATA[channel].dev, 'development/ember-data.js'
-  downloadEmberFile EMBER_DATA[channel].prod, 'production/ember-data.js'
+  installEmberFiles(EMBER_DATA, 'ember-data.js', options)
 
+task 'ember-data:list', 'list tagged relases of Ember Data', (options) ->
+  listTags EMBER_DATA_GITHUB_API_URL, 'v0.0.1', 'Ember Data',
+    'ember-data:install'
+
+# -----------
 # Ember Model
+# -----------
 EMBER_MODEL =
   dev: 'http://builds.erikbryn.com/ember-model/ember-model-latest.js'
   prod: 'http://builds.erikbryn.com/ember-model/ember-model-latest.prod.js'
@@ -114,7 +135,9 @@ task 'ember-model:install', 'install latest Ember Model', (options) ->
   downloadEmberFile EMBER_MODEL.dev, 'development/ember-model.js'
   downloadEmberFile EMBER_MODEL.prod, 'production/ember-model.js'
 
+# ----------
 # Handlebars
+# ----------
 task 'handlebars:install', 'install latest Handlebars', (options) ->
   downloadFile(
     'http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-latest.js',

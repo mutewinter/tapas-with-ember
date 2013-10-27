@@ -105,8 +105,11 @@ _Note: `cake ember:list` displays the known tagged releases since 1.0.0._
 
 ```bash
 cake ember-data:install
-# cake -c "canary" ember:install # for canary
+# cake -c "v1.0.0-beta.3" ember-data:install # for v1.0.0-beta.3 tagged release
+# cake -c "canary" ember-data:install # for canary
 ```
+
+_Note: `cake ember-data:list` displays the known tagged releases._
 
 **Install Latest Ember Model**
 
