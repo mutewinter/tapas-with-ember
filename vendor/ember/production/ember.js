@@ -61,7 +61,7 @@ var define, requireModule;
 
   @class Ember
   @static
-  @version 1.1.0
+  @version 1.1.2
 */
 
 if ('undefined' === typeof Ember) {
@@ -88,10 +88,10 @@ Ember.toString = function() { return "Ember"; };
 /**
   @property VERSION
   @type String
-  @default '1.1.0'
+  @default '1.1.2'
   @final
 */
-Ember.VERSION = '1.1.0';
+Ember.VERSION = '1.1.2';
 
 /**
   Standard environmental variables. You can define these in a global `ENV`
@@ -6858,9 +6858,7 @@ function applyConcatenatedProperties(obj, key, value, values) {
       return Ember.makeArray(baseValue).concat(value);
     }
   } else {
-    // Make sure this mixin has its own array so it is not
-    // accidentally mutated by another child's interactions
-    return Ember.makeArray(value).slice();
+    return Ember.makeArray(value);
   }
 }
 
@@ -15290,7 +15288,10 @@ function makeCtor() {
         var properties = props[i];
 
 
-        if (Ember.typeOf(properties) !== 'object') { continue; }
+        if (properties === null || typeof properties !== 'object') {
+
+          continue;
+        }
 
         var keyNames = Ember.keys(properties);
         for (var j = 0, ll = keyNames.length; j < ll; j++) {
@@ -15481,7 +15482,7 @@ CoreObject.PrototypeMixin = Mixin.create({
     This feature is available for you to use throughout the Ember object model,
     although typical app developers are likely to use it infrequently. Since
     it changes expectations about behavior of properties, you should properly
-    document its usage in each individual concatenated property (to not 
+    document its usage in each individual concatenated property (to not
     mislead your users to think they can override the property in a subclass).
 
     @property concatenatedProperties
@@ -15782,10 +15783,10 @@ var ClassMixin = Mixin.create({
   },
 
   /**
-    
+
     Augments a constructor's prototype with additional
     properties and functions:
-    
+
     ```javascript
     MyObject = Ember.Object.extend({
       name: 'an object'
@@ -15805,7 +15806,7 @@ var ClassMixin = Mixin.create({
 
     o.say("goodbye"); // logs "goodbye"
     ```
-    
+
     To add functions and properties to the constructor itself,
     see `reopenClass`
 
@@ -15819,7 +15820,7 @@ var ClassMixin = Mixin.create({
 
   /**
     Augments a constructor's own properties and functions:
-    
+
     ```javascript
     MyObject = Ember.Object.extend({
       name: 'an object'
@@ -15829,12 +15830,12 @@ var ClassMixin = Mixin.create({
     MyObject.reopenClass({
       canBuild: false
     });
-    
+
     MyObject.canBuild; // false
     o = MyObject.create();
     ```
 
-    In other words, this creates static properties and functions for the class. These are only available on the class 
+    In other words, this creates static properties and functions for the class. These are only available on the class
     and not on any instance of that class.
 
     ```javascript
@@ -15864,15 +15865,15 @@ var ClassMixin = Mixin.create({
     alert(App.Person.species); // "Homo sapiens"
     ```
 
-    Note that `species` and `createPerson` are *not* valid on the `tom` and `yehuda` 
+    Note that `species` and `createPerson` are *not* valid on the `tom` and `yehuda`
     variables. They are only valid on `App.Person`.
-    
+
     To add functions and properties to instances of
     a constructor by extending the constructor's prototype
     see `reopen`
-    
+
     @method reopenClass
-  */  
+  */
   reopenClass: function() {
     reopen.apply(this.ClassMixin, arguments);
     applyMixin(this, arguments, false);
@@ -35156,10 +35157,10 @@ var Application = Ember.Application = Ember.Namespace.extend(Ember.DeferredMixin
         container = this.__container__,
         graph = new Ember.DAG(),
         namespace = this,
-        i, initializer;
+        name, initializer;
 
-    for (i=0; i<initializers.length; i++) {
-      initializer = initializers[i];
+    for (name in initializers) {
+      initializer = initializers[name];
       graph.addEdges(initializer.name, initializer.initialize, initializer.before, initializer.after);
     }
 
@@ -35264,15 +35265,22 @@ var Application = Ember.Application = Ember.Namespace.extend(Ember.DeferredMixin
 });
 
 Ember.Application.reopenClass({
-  concatenatedProperties: ['initializers'],
-  initializers: Ember.A(),
+  initializers: {},
   initializer: function(initializer) {
-    var initializers = get(this, 'initializers');
+    // If this is the first initializer being added to a subclass, we are going to reopen the class
+    // to make sure we have a new `initializers` object, which extends from the parent class' using
+    // prototypal inheritance. Without this, attempting to add initializers to the subclass would
+    // pollute the parent class as well as other subclasses.
+    if (this.superclass.initializers !== undefined && this.superclass.initializers === this.initializers) {
+      this.reopenClass({
+        initializers: Ember.create(this.initializers)
+      });
+    }
 
 
 
 
-    initializers.push(initializer);
+    this.initializers[initializer.name] = initializer;
   },
 
   /**
