@@ -36,7 +36,7 @@
   },
   "app/helpers/*.coffee": {
     "type": "helper",
-    "template": "module.exports = Ember.Handlebars.helper('fullName', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName')",
+    "template": "Ember.Handlebars.helper 'fullName', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName'",
     "test": "tests/helpers/%s_test.coffee"
   },
   "app/initializers/*.coffee": {
