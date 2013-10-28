@@ -36,12 +36,12 @@
   },
   "app/helpers/*.coffee": {
     "type": "helper",
-    "template": "Ember.Handlebars.helper 'fullName', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName'",
+    "template": "Ember.Handlebars.helper '%s', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName'",
     "test": "tests/helpers/%s_test.coffee"
   },
   "app/initializers/*.coffee": {
     "type": "initializer",
-    "template": "module.exports = Ember.Application.initializer\n  name: '%s'\n\n  initialize: (container, application) ->\n    container.register('store:main', application.Store)"
+    "template": "Ember.Application.initializer\n  name: '%s'\n\n  initialize: (container, application) ->\n    container.register('store:main', application.Store)"
   },
   "app/components/*.coffee": {
     "type": "component",
