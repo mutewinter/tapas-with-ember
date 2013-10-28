@@ -87,6 +87,7 @@ installEmberFiles = (project, filename, options) ->
   if 'tag' of options
     # Download a Tag
     tag = options.tag
+    tag = "v#{tag}" unless /^v/.test(tag)
     downloadEmberFile(project['tag'].dev.replace(/{{tag}}/, tag),
       "development/#{filename}")
     downloadEmberFile(project['tag'].prod.replace(/{{tag}}/, tag),
