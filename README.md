@@ -223,6 +223,17 @@ commands:
 :Eview <name>        → app/views/<name>.coffee
 ```
 
+## Updating Tapas with Ember
+
+Tapas with Ember has a built-in update script.
+
+```
+cake tapas:update
+```
+
+It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
+`config.coffee`, `generators/*`.
+
 ## Thanks To
 
 * [@gcollazo](https://github.com/gcollazo) for making

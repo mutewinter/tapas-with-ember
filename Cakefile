@@ -4,6 +4,7 @@ fs = require 'fs'
 path = require 'path'
 {spawn, exec} = require 'child_process'
 semver = require 'semver'
+AdmZip = require('adm-zip')
 
 # ----------------
 # Server / Builder
@@ -36,9 +37,48 @@ task 'build', 'build for production (delete public folder first)', ->
   process.env.BRUNCH_ENV = 'production'
   spawnBrunch ['b', '-P'], process.env
 
-# ------------
-# Installation
-# ------------
+# -------------
+# Tapas Updates
+# -------------
+updateMessage = 'update Tapas to latest (Cakefile, package.json, portkey.json,
+ config.coffee, generators/*)'
+task 'tapas:update', updateMessage, (options) ->
+  url = 'https://codeload.github.com/mutewinter/tapas-with-ember/zip/master'
+  filesToUpdate = [
+    'Cakefile'
+    'package.json'
+    'portkey.json'
+    'config.coffee'
+    'generators/'
+  ]
+  https.get url, (res) ->
+    data = []
+    dataLen = 0
+
+    res.on('data', (chunk) ->
+      data.push(chunk)
+      dataLen += chunk.length
+    ).on('end', ->
+      buf = new Buffer(dataLen)
+
+      pos = 0
+      for dataItem in data
+        dataItem.copy(buf, pos)
+        pos += dataItem.length
+
+      zip = new AdmZip(buf)
+
+      filesToUpdate.forEach (file) ->
+        targetFile = "tapas-with-ember-master/#{file}"
+        if /\/$/.test(file)
+          zip.extractEntryTo(targetFile, file, false, true)
+        else
+          zip.extractEntryTo(targetFile, '', false, true)
+    )
+
+# --------------
+# Script Updates
+# --------------
 
 EMBER_BASE_URL = 'http://builds.emberjs.com'
 GITHUB_API_URL = 'https://api.github.com'

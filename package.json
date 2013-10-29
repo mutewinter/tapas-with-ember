@@ -30,7 +30,8 @@
     "auto-reload-brunch": "~1.7.0",
     "ember-handlebars-brunch": "~1.0.0",
     "gzip-brunch": "~1.0.0",
-    "semver": "~2.2.0"
+    "semver": "~2.2.0",
+    "adm-zip": "~0.4.3"
   },
   "devDependencies": {
     "karma": "~0.10",
