@@ -16,7 +16,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "start": "brunch watch --server"
+    "start": "cake server"
   },
   "dependencies": {
     "brunch": "~1.7.10",
@@ -34,10 +34,7 @@
     "adm-zip": "~0.4.3"
   },
   "devDependencies": {
-    "karma": "~0.10",
-    "karma-qunit": "*",
-    "karma-coffee-preprocessor": "~0.1",
-    "karma-phantomjs-launcher": "~0.1",
-    "qunitjs": "*"
+    "qunitjs": "*",
+    "testem": "~0.5.8"
   }
 }

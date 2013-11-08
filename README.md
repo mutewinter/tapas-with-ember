@@ -179,9 +179,8 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 
 ## Testing
 
-To run you will need [Karma](https://github.com/karma-runner) you will need to
-install [phantomjs](https://github.com/ariya/phantomjs). If you want to run
-your tests on other browsers consult the Karma docs.
+To run you will need [Testem](https://github.com/airportyh/testem) and you will need to
+install [phantomjs](https://github.com/ariya/phantomjs).
 
 ```
 brew update && brew install phantomjs
@@ -195,8 +194,17 @@ brunch watch -s
 ```
 
 ```
-karma start
+testem
 ```
+
+If you want to run your tests on other browsers, modify your `testem.json` file to include the additional browsers. For example:
+
+```
+"launch_in_dev": [ "PhantomJS", "Chrome", "Chrome Canary", "Firefox", "Safari" ]
+```
+
+You can see a list of available launchers by running the command `testem launchers`.
+
 
 ## Ember.vim Support
 
