@@ -106,6 +106,7 @@ downloadFile = (src, dest) ->
   file = fs.createWriteStream(dest)
   request = http.get src, (response) ->
     response.pipe file
+    console.log('Downloaded ' + src + ' to ' + dest)
 
 downloadEmberFile = (src, dest) ->
   downloadFile(src, "vendor/ember/#{dest}")
