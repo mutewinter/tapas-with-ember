@@ -59,6 +59,11 @@
     "test": "tests/adapters/%s.coffee",
     "template": "module.exports = %SAdapter = DS.RESTAdapter.extend\n  \n\n"
   },
+  "app/serializers/*.coffee": {
+    "type": "serializer",
+    "test": "tests/serializers/%s.coffee",
+    "template": "module.exports = %SSerializer = DS.RESTSeriazer.extend\n  \n\n"
+  },
 
   "app/config/*": {
     "type": "config"
