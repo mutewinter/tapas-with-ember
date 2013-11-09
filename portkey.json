@@ -63,6 +63,9 @@
   "app/config/*": {
     "type": "config"
   },
+  "config/environments/*.coffee": {
+    "type": "environment"
+  },
   "app/initialize.coffee": {
     "type": "initialize"
   },
