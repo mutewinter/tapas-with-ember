@@ -1,1 +1,2 @@
-window.BRUNCH_ENV = 'production'
+window.TAPAS_ENV =
+  name: 'production'

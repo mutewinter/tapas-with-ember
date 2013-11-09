@@ -1,5 +1,4 @@
-Environment = require 'config/environment'
-env = Environment.create()
+env = require 'config/environment'
 
 if env.get('isDevelopment')
   options =

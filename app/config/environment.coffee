@@ -3,9 +3,7 @@
 window.require.list().filter (module) ->
   require(module) if new RegExp("^config/environments/").test(module)
 
-module.exports = Ember.Object.extend
-  name: window.BRUNCH_ENV ? 'development'
-
+Environment = Ember.Object.extend
   isDevelopment: (->
     @get('name') is 'development'
   ).property('name')
@@ -13,3 +11,5 @@ module.exports = Ember.Object.extend
   isProduction: (->
     @get('name') is 'production'
   ).property('name')
+
+module.exports = Environment.create(window.TAPAS_ENV)
