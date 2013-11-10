@@ -16,7 +16,8 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "start": "cake server"
+    "start": "cake server",
+    "test": "./node_modules/.bin/testem"
   },
   "dependencies": {
     "brunch": "~1.7.10",

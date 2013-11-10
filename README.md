@@ -179,31 +179,31 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 
 ## Testing
 
-To run you will need [Testem](https://github.com/airportyh/testem) and you will need to
-install [phantomjs](https://github.com/ariya/phantomjs).
+To run you will need [Testem](https://github.com/airportyh/testem) and you will
+need to install [phantomjs](https://github.com/ariya/phantomjs).
 
 ```
 brew update && brew install phantomjs
 ```
 
 To run tests continiously as you write code and tests (for now) you must open
-two terminal windows.
+two terminal windows. One running brunch to continiously build the application
+and the other running testem.
 
 ```
-brunch watch -s
+$> cake test # starts brunch in test environment
+$> npm test  # starts testem
 ```
 
-```
-testem
-```
-
-If you want to run your tests on other browsers, modify your `testem.json` file to include the additional browsers. For example:
+If you want to run your tests on other browsers, modify your `testem.json` file
+to include the additional browsers. For example:
 
 ```
-"launch_in_dev": [ "PhantomJS", "Chrome", "Chrome Canary", "Firefox", "Safari" ]
+"launch_in_dev": ["PhantomJS", "Chrome", "Firefox", "Safari"]
 ```
 
-You can see a list of available launchers by running the command `testem launchers`.
+You can see a list of available launchers by running the command `testem
+launchers`.
 
 
 ## Ember.vim Support

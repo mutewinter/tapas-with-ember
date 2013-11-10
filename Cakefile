@@ -37,6 +37,11 @@ task 'build', 'build for production (delete public folder first)', ->
   process.env.BRUNCH_ENV = 'production'
   spawnBrunch ['b', '-P'], process.env
 
+task 'test', 'run brunch in the test environment', ->
+  flags = ['w', '-s']
+  process.env.BRUNCH_ENV = 'test'
+  spawnBrunch flags, process.env
+
 # -------------
 # Tapas Updates
 # -------------
