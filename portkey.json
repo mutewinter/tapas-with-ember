@@ -1,6 +1,6 @@
 {
   "portkeys": ["ember:custom"],
-  "app/models/*.coffee": {
+  "app/models/**.coffee": {
     "type": "model",
     "alternate": ["app/routes/%s.coffee", "app/routes/%{source|plural}.coffee", "app/routes/%{source|plural}/index.coffee"],
     "related": ["app/controllers/%s.coffee", "app/controllers/%{source|plural}.coffee", "app/controllers/%{source|plural}/index.coffee"],
