@@ -1,0 +1,18 @@
+{
+  "framework": "qunit",
+  "launch_in_dev": [ "PhantomJS" ],
+  "before_tests": "coffee -c test/*.coffee; coffee -c test/**/*.coffee",
+  "on_exit": "find test/. -type f -name \"*.js\" | xargs rm -f",
+  "src_files": [
+    "public/javascripts/vendor.js",
+    "public/javascripts/app.js",
+    "test/helpers.coffee",
+    "test/**/*_test.coffee"
+  ],
+  "serve_files": [
+    "public/javascripts/vendor.js",
+    "public/javascripts/app.js",
+    "test/helpers.js",
+    "test/**/*_test.js"
+  ]
+}
