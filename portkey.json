@@ -47,7 +47,7 @@
     "type": "component",
     "related": "app/templates/components/%s.hbs",
     "test": "tests/components/%s_test.coffee",
-    "template": "module.exports = %SComponent = Ember.Component.extend\n  \n\n"
+    "template": "module.exports = App.%SComponent = Ember.Component.extend\n  \n\n"
   },
   "app/mixins/*.coffee": {
     "type": "mixin",
