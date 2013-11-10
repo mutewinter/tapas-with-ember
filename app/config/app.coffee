@@ -11,8 +11,8 @@ if env.get('isDevelopment')
 
   # From http://git.io/HPjymw
   Ember.RSVP.configure 'onerror', (e) ->
-    console.error(e.message)
-    console.error(e.stack)
+    Ember.Logger.error(e.message)
+    Ember.Logger.error(e.stack)
 
   Ember.debug("Running in #{env.get('name')} environment")
 else
