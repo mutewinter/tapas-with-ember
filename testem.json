@@ -9,6 +9,9 @@
     "test/helpers.coffee",
     "test/**/*_test.coffee"
   ],
+  "css_files": [
+    "public/stylesheets/app.css"
+  ],
   "serve_files": [
     "public/javascripts/vendor.js",
     "public/javascripts/app.js",
