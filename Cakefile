@@ -55,6 +55,8 @@ task 'tapas:update', updateMessage, (options) ->
     'portkey.json'
     'config.coffee'
     'generators/'
+    'test/'
+    'testem.json'
   ]
   https.get url, (res) ->
     data = []
