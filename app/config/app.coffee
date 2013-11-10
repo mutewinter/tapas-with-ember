@@ -14,7 +14,9 @@ if env.get('isDevelopment')
     Ember.Logger.error(e.message)
     Ember.Logger.error(e.stack)
 
-  Ember.debug("Running in #{env.get('name')} environment")
+  Ember.Logger.debug(
+    "Running in the %c#{env.get('name')}%c environment", 'color: red;', ''
+  )
 else
   options = {}
 
