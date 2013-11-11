@@ -88,7 +88,7 @@
     "type": "stylesheet"
   },
 
-  "test/*_test.coffee": {
+  "test/**_test.coffee": {
     "type": "test"
   }
 }
