@@ -27,7 +27,7 @@
     "css-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
     "uglify-js-brunch": "~1.7.3",
-    "clean-css-brunch": "~1.6.0",
+    "clean-css-brunch": "~1.7.1",
     "auto-reload-brunch": "~1.7.1",
     "ember-handlebars-brunch": "~1.0.0",
     "gzip-brunch": "~1.0.0",
