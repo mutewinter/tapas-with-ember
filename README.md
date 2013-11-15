@@ -246,6 +246,9 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 
 * [@gcollazo](https://github.com/gcollazo) for making
   [brunch-with-ember-reloaded][], which Tapas with Ember is based on.
+* [@cavneb](https://github.com/cavneb) for his excellent contributions via his
+  fork, [yet-another-ember-brunch][].
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
@@ -266,3 +269,4 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [the FAQ]: https://github.com/mutewinter/tapas-with-ember/wiki/FAQ
 [deployment script]: /config/deploy.rb
 [Mina]: http://nadarei.co/mina/
+[yet-another-ember-brunch]: https://github.com/cavneb/yet-another-ember-brunch
