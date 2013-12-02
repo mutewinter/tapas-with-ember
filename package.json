@@ -20,7 +20,7 @@
     "test": "./node_modules/.bin/testem"
   },
   "dependencies": {
-    "brunch": "~1.7.10",
+    "brunch": "~1.7.12",
     "coffee-script": "~1.6.3",
     "javascript-brunch": "~1.7.0",
     "coffee-script-brunch": "~1.7.3",
