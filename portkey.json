@@ -51,7 +51,7 @@
   },
   "app/mixins/*.coffee": {
     "type": "mixin",
-    "template": "module.exports = App.%S = Ember.Mixin.create\n  # Functions and things. You know, code."
+    "template": "module.exports = App.%SMixin = Ember.Mixin.create\n  # Functions and things. You know, code."
   },
 
   "app/adapters/*.coffee": {
