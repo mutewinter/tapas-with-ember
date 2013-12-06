@@ -4,7 +4,7 @@
     "type": "model",
     "alternate": ["app/routes/%s.coffee", "app/routes/%{source|plural}.coffee", "app/routes/%{source|plural}/index.coffee"],
     "related": ["app/controllers/%s.coffee", "app/controllers/%{source|plural}.coffee", "app/controllers/%{source|plural}/index.coffee"],
-    "template": "module.exports = App.%S = DS.Model.extend\n  # Functions and things. You know, code.",
+    "template": "module.exports = App.%S = DS.Model.extend()",
     "test": "tests/models/%s_test.coffee"
   },
   "app/views/**.coffee": {
@@ -19,14 +19,14 @@
     "alternate": ["app/routes/%s.coffee", "app/models/%{source|mname}.coffee"],
     "related": ["app/templates/%s.hbs", "app/views/%s.coffee"],
     "test": "tests/controllers/%s_test.coffee",
-    "template": "module.exports = App.%SController = Ember.ObjectController.extend\n  "
+    "template": "module.exports = App.%SController = Ember.ObjectController.extend()"
   },
   "app/routes/**.coffee": {
     "type": "route",
     "alternate": ["app/models/%{source|mname}.coffee"],
     "related": ["app/controllers/%s.coffee", "app/templates/%s.hbs"],
     "test": "tests/routes/%s_test.coffee",
-    "template": "module.exports = App.%SRoute = Ember.Route.extend\n  setupController: (controller) ->"
+    "template": "module.exports = App.%SRoute = Ember.Route.extend()"
   },
   "app/templates/**.hbs": {
     "type": "template",
@@ -47,22 +47,22 @@
     "type": "component",
     "related": "app/templates/components/%s.hbs",
     "test": "tests/components/%s_test.coffee",
-    "template": "module.exports = App.%SComponent = Ember.Component.extend\n  \n\n"
+    "template": "module.exports = App.%SComponent = Ember.Component.extend()"
   },
   "app/mixins/*.coffee": {
     "type": "mixin",
-    "template": "module.exports = App.%SMixin = Ember.Mixin.create\n  # Functions and things. You know, code."
+    "template": "module.exports = App.%SMixin = Ember.Mixin.create()"
   },
 
   "app/adapters/*.coffee": {
     "type": "adapter",
     "test": "tests/adapters/%s.coffee",
-    "template": "module.exports = App.%SAdapter = DS.RESTAdapter.extend\n  \n\n"
+    "template": "module.exports = App.%SAdapter = DS.RESTAdapter.extend()"
   },
   "app/serializers/*.coffee": {
     "type": "serializer",
     "test": "tests/serializers/%s.coffee",
-    "template": "module.exports = App.%SSerializer = DS.RESTSeriazer.extend\n  \n\n"
+    "template": "module.exports = App.%SSerializer = DS.RESTSeriazer.extend()"
   },
 
   "app/config/*": {
