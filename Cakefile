@@ -5,6 +5,9 @@ path = require 'path'
 {spawn, exec} = require 'child_process'
 semver = require 'semver'
 AdmZip = require('adm-zip')
+GitHubApi = require 'github'
+
+github = new GitHubApi(version: '3.0.0')
 
 # ----------------
 # Server / Builder
@@ -88,8 +91,6 @@ task 'tapas:update', updateMessage, (options) ->
 
 EMBER_BASE_URL = 'http://builds.emberjs.com'
 GITHUB_API_URL = 'https://api.github.com'
-EMBER_GITHUB_API_URL = "#{GITHUB_API_URL}/repos/emberjs/ember.js/tags"
-EMBER_DATA_GITHUB_API_URL = "#{GITHUB_API_URL}/repos/emberjs/data/tags"
 EMBER = {}
 EMBER_DATA = {}
 ['release', 'beta', 'canary'].forEach (build) ->
@@ -117,18 +118,14 @@ downloadFile = (src, dest) ->
 downloadEmberFile = (src, dest) ->
   downloadFile(src, "vendor/ember/#{dest}")
 
-listTags = (githubUrl, since, name, command) ->
-  request = https.get githubUrl, (response) ->
-    data = ''
-    response.on 'data', (chunk) -> data += chunk
-    response.on 'end', ->
-      tags = JSON.parse(data)
-      console.log "Tagged #{name} Releases:"
-      for tag in tags
-        if semver.valid(tag.name) and !semver.lt(tag.name, since)
-          firstTag = tag.name unless firstTag
-          console.log "  #{tag.name}"
-      console.log "Install with cake -t \"#{firstTag}\" #{command}"
+listTags = (user, repo, since, name, command) ->
+  github.repos.getTags(user: user, repo: repo, (resp, tags) ->
+    for tag in tags
+      if semver.valid(tag.name) and !semver.lt(tag.name, since)
+        firstTag = tag.name unless firstTag
+        console.log "  #{tag.name}"
+    console.log "Install with cake -t \"#{firstTag}\" #{command}"
+  )
 
 installEmberFiles = (project, filename, options) ->
   if 'tag' of options
@@ -160,7 +157,7 @@ task 'ember:install', 'install latest Ember', (options) ->
   installEmberFiles(EMBER, 'ember.js', options)
 
 task 'ember:list', 'list tagged relases of Ember since v1.0.0', (options) ->
-  listTags EMBER_GITHUB_API_URL, 'v1.0.0', 'Ember', 'ember:install'
+  listTags 'emberjs', 'ember.js', 'v1.0.0', 'Ember', 'ember:install'
 
 # ----------
 # Ember Data
@@ -169,7 +166,7 @@ task 'ember-data:install', 'install latest Ember Data', (options) ->
   installEmberFiles(EMBER_DATA, 'ember-data.js', options)
 
 task 'ember-data:list', 'list tagged relases of Ember Data', (options) ->
-  listTags EMBER_DATA_GITHUB_API_URL, 'v0.0.1', 'Ember Data',
+  listTags 'emberjs', 'data', 'v0.0.1', 'Ember Data',
     'ember-data:install'
 
 # -----------
