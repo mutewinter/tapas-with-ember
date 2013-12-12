@@ -10,9 +10,9 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        'javascripts/app.js':
+        'scripts/app.js':
           new RegExp("^(app|config/environments/#{environment}\.coffee)")
-        'javascripts/vendor.js':
+        'scripts/vendor.js':
           new RegExp("^vendor/(scripts|ember/#{environment})")
       order:
         before: [
@@ -34,7 +34,7 @@ exports.config =
     templates:
       precompile: true
       root: 'templates'
-      joinTo: 'javascripts/app.js' : /^app/
+      joinTo: 'scripts/app.js' : /^app/
 
   # allow _ prefixed templates so partials work
   conventions:
