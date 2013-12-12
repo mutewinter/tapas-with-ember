@@ -224,7 +224,7 @@ commands:
 :Emixin <name>       → app/mixins/<name>.coffee
 :Emodel <name>       → app/models/<name>.coffee
 :Eroute <name>       → app/routes/<name>.coffee
-:Estylesheet <name>  → app/stylesheets/<name>.styl
+:Estyle <name>       → app/styles/<name>.styl
 :Etemplate <name>    → app/templates/<name>.hbs
 :Etest <name>        → test/<name>_test.coffee
 :Eutility <name>     → app/utility/<name>.coffee

@@ -10,7 +10,7 @@
     "test/**/*_test.coffee"
   ],
   "css_files": [
-    "public/stylesheets/app.css"
+    "public/styles/app.css"
   ],
   "serve_files": [
     "public/javascripts/vendor.js",
