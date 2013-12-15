@@ -37,11 +37,11 @@ installation scripts, environment-specific JS builds, generators, and
 
 **Brunch Plugins**
 
+* **[digest-brunch][]** - Add a unique SHA to your assets in your production
+  build.
 * **[auto-reload-brunch][]** - Adds automatic browser reloading support to
   Brunch.
 * **[uglify-js-brunch][]** - Adds UglifyJS minification support to Brunch.
-* **[gzip-brunch][]** - Automatically generate gzipped versions of your assets
-  in your production build.
 
 ## Requirements
 
@@ -256,7 +256,6 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [Stylus]: http://learnboost.github.io/stylus/
 [CoffeeScript]: http://coffeescript.org/
 [auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
-[gzip-brunch]: https://github.com/banyan/gzip-brunch
 [Brunch]: http://brunch.io
 [Ember]: http://emberjs.com
 [uglify-js-brunch]: https://github.com/brunch/uglify-js-brunch
@@ -270,3 +269,4 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [deployment script]: /config/deploy.rb
 [Mina]: http://nadarei.co/mina/
 [yet-another-ember-brunch]: https://github.com/cavneb/yet-another-ember-brunch
+[digest-brunch]: https://github.com/mutewinter/digest-brunch
