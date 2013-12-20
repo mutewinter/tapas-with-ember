@@ -45,11 +45,11 @@ installation scripts, environment-specific JS builds, generators, and
 
 ## Requirements
 
-Before using Tapas with Ember you will need to install [Node][] and
-[Brunch][] 1.7 or above.
+Before using Tapas with Ember you will need to install [Node][],
+[CoffeeScript][], and [Brunch][].
 
 ```
-npm install -g brunch
+npm install -g brunch coffee
 ```
 
 ## Quick Start
