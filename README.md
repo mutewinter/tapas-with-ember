@@ -105,7 +105,7 @@ _Note: `cake ember:list` displays the tagged releases since 1.0.0._
 
 ```bash
 cake ember-data:install
-# cake -t "v1.0.0-beta.3" ember-data:install # for v1.0.0-beta.3 tagged release
+# cake -t "v1.0.0-beta.4" ember-data:install # for v1.0.0-beta.4 tagged release
 # cake -c "canary" ember-data:install # for canary
 ```
 
