@@ -14,6 +14,9 @@ if env.get('isDevelopment')
     Ember.Logger.error(e.message)
     Ember.Logger.error(e.stack)
 
+  # Log view render times to the console
+  Ember.STRUCTURED_PROFILE = true
+
   Ember.Logger.debug(
     "Running in the %c#{env.get('name')}%c environment", 'color: red;', ''
   )
