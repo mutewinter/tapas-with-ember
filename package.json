@@ -20,16 +20,16 @@
     "test": "./node_modules/.bin/testem"
   },
   "dependencies": {
-    "brunch": "=1.7.10",
+    "brunch": "=1.7.13",
     "coffee-script": "~1.6.3",
-    "javascript-brunch": "~1.7.0",
+    "javascript-brunch": "~1.7.1",
     "coffee-script-brunch": "~1.7.3",
     "css-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
-    "uglify-js-brunch": "~1.7.3",
+    "uglify-js-brunch": "~1.7.6",
     "clean-css-brunch": "~1.7.1",
     "auto-reload-brunch": "~1.7.1",
-    "ember-handlebars-brunch": "~1.0.0",
+    "ember-handlebars-brunch": "~1.1.0",
     "semver": "~2.2.1",
     "adm-zip": "~0.4.3",
     "github": "~0.1.12",
@@ -37,6 +37,6 @@
   },
   "devDependencies": {
     "qunitjs": "*",
-    "testem": "~0.5.8"
+    "testem": "~0.5.15"
   }
 }
