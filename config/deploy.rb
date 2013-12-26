@@ -28,7 +28,9 @@ task :deploy => :environment do
     # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
+    queue 'echo "-----> Installing npm packages"'
     queue "#{echo_cmd %[npm install]}"
+    queue 'echo "-----> Building with Tapas and Brunch"'
     queue 'cake build'
     queue 'echo "-----> Deleting source files"'
     queue 'ls -1 | grep -v "public\\|node_modules" | xargs rm -rf'
