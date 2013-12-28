@@ -21,18 +21,19 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/node_modules"]
 end
 
-desc "Deploys the current version to the server."
+desc "Deploys the latest commit from your git remote to the server."
 task :deploy => :environment do
   deploy do
-    # Put things that will set up an empty directory into a fully set-up
-    # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     queue 'echo "-----> Installing npm packages"'
-    queue "#{echo_cmd %[npm install]}"
+    queue 'npm install'
+    # Uncomment if you're using bower
+    # queue 'echo "-----> Installing bower components"'
+    # queue 'bower install'
     queue 'echo "-----> Building with Tapas and Brunch"'
     queue 'cake build'
-    queue 'echo "-----> Deleting source files"'
+    queue 'echo "-----> Deleting files not need for deploy"'
     queue 'ls -1 | grep -v public | xargs rm -rf'
   end
 end
