@@ -9,10 +9,10 @@ if env.get('isDevelopment')
     LOG_VIEW_LOOKUPS:               true
     LOG_ACTIVE_GENERATION:          true
 
-  # From http://git.io/HPjymw
-  Ember.RSVP.configure 'onerror', (e) ->
-    Ember.Logger.error(e.message)
-    Ember.Logger.error(e.stack)
+  Ember.RSVP.configure 'onerror', (error) ->
+    Ember.Logger.error(error?.message or 'No error message for Promise')
+    Ember.Logger.error(error?.stack)
+    Ember.Logger.error(error?.object)
 
   # Log view render times to the console
   Ember.STRUCTURED_PROFILE = true
