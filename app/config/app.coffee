@@ -10,9 +10,13 @@ if env.get('isDevelopment')
     LOG_ACTIVE_GENERATION:          true
 
   Ember.RSVP.configure 'onerror', (error) ->
-    Ember.Logger.error(error?.message or 'No error message for Promise')
-    Ember.Logger.error(error?.stack)
-    Ember.Logger.error(error?.object)
+    if Ember.typeOf(error) is 'object'
+      message = error?.message or 'No error message'
+      Ember.Logger.error("RSVP Error: #{message}")
+      Ember.Logger.error(error?.stack)
+      Ember.Logger.error(error?.object)
+    else
+      Ember.Logger.debug 'RSVP Error', error
 
   # Log view render times to the console
   Ember.STRUCTURED_PROFILE = true
