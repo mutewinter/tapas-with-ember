@@ -16,7 +16,7 @@ if env.get('isDevelopment')
       Ember.Logger.error(error?.stack)
       Ember.Logger.error(error?.object)
     else
-      Ember.Logger.debug 'RSVP Error', error
+      Ember.Logger.error 'RSVP Error', error
 
   # Log view render times to the console
   Ember.STRUCTURED_PROFILE = true
