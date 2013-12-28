@@ -33,8 +33,6 @@ task :deploy => :environment do
     queue 'echo "-----> Building with Tapas and Brunch"'
     queue 'cake build'
     queue 'echo "-----> Deleting source files"'
-    queue 'ls -1 | grep -v "public\\|node_modules" | xargs rm -rf'
-    queue 'echo "-----> Deleting node_modules symlink"'
-    queue 'rm node_modules'
+    queue 'ls -1 | grep -v public | xargs rm -rf'
   end
 end
