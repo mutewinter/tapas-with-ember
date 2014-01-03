@@ -32,7 +32,7 @@ def check_for_unpushed_changes
     print "#{count} unpushed #{pluralized}, continue? (yN) "
     answer = STDIN::gets.strip.downcase
     if answer != 'y'
-      puts 'Quitting'
+      puts 'Aborting.'
       Process.exit
     end
   end
