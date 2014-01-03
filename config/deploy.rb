@@ -21,8 +21,27 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/node_modules"]
 end
 
+def unpushed_commits
+  `git log --oneline origin/master..HEAD | wc -l`.to_i
+end
+
+def check_for_unpushed_changes
+  count = unpushed_commits
+  if count > 0
+    pluralized = count == 1 ? 'commit' : 'commits'
+    print "#{count} unpushed #{pluralized}, continue? (yN) "
+    answer = STDIN::gets.strip.downcase
+    if answer != 'y'
+      puts 'Quitting'
+      Process.exit
+    end
+  end
+end
+
 desc "Deploys the latest commit from your git remote to the server."
 task :deploy => :environment do
+  check_for_unpushed_changes
+
   deploy do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
