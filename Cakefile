@@ -14,6 +14,7 @@ github = new GitHubApi(version: '3.0.0')
 # ----------------
 
 option '-P', '--production', 'run server in production mode'
+option null, '--port [PORT]', 'listen on specified port (default 3333)'
 
 LOCAL_BRUNCH = path.join('.', 'node_modules', '.bin', 'brunch')
 
@@ -33,6 +34,11 @@ task 'server', 'start the brunch server in development', (options) ->
   if options.production?
     flags.push('-P')
     process.env.BRUNCH_ENV = 'production'
+
+  if options.port?
+    flags.push '-p'
+    flags.push options.port
+
   spawnBrunch flags, process.env
 
 task 'build', 'build for production (delete public folder first)', ->
