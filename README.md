@@ -68,7 +68,7 @@ Ember app! Code changes you make will be automatically loaded in the browser.
 Edit [`index_route.coffee`](app/routes/index_route.coffee) to see live-updating
 in action.
 
-Tapas with Ember runs Ember 1.2.0 out of the box. You can update to Beta or
+Tapas with Ember runs Ember 1.3.0 out of the box. You can update to Beta or
 Canary builds using the command below. It's also easy to install the latest
 Ember Data or Ember Model using the `cake` scripts below.
 
@@ -89,12 +89,12 @@ See [the FAQ][] in the Wiki.
 
 ### Install Latest Ember
 
-Tapas with Ember ships with Ember 1.1.2 already installed. You can update to
+Tapas with Ember ships with Ember 1.3.0 already installed. You can update to
 the latest release from each channel by using the commands below.
 
 ```bash
 cake ember:install
-# cake -t "v1.2.0" ember:install # for v1.2.0 tagged release
+# cake -t "v1.3.0" ember:install # for v1.3.0 tagged release
 # cake -c "beta" ember:install # for beta
 # cake -c "canary" ember:install # for canary
 ```
