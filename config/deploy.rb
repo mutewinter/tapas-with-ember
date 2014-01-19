@@ -21,26 +21,39 @@ task :setup => :environment do
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/node_modules"]
 end
 
+def yes_or_exit(message)
+  print "#{message} (yN) "
+  answer = STDIN::gets.strip.downcase
+  if answer != 'y'
+    puts 'Aborting.'
+    Process.exit
+  end
+end
+
 def unpushed_commits
   `git log --oneline origin/master..HEAD | wc -l`.to_i
+end
+
+def uncommitted_changes
+  `git diff --shortstat | wc -l`.to_i != 0
 end
 
 def check_for_unpushed_changes
   count = unpushed_commits
   if count > 0
     pluralized = count == 1 ? 'commit' : 'commits'
-    print "#{count} unpushed #{pluralized}, continue? (yN) "
-    answer = STDIN::gets.strip.downcase
-    if answer != 'y'
-      puts 'Aborting.'
-      Process.exit
-    end
+    yes_or_exit "#{count} unpushed #{pluralized}, continue?"
   end
+end
+
+def check_for_uncommited_changes
+  yes_or_exit 'Uncommitted changes, continue?' if uncommitted_changes
 end
 
 desc "Deploys the latest commit from your git remote to the server."
 task :deploy => :environment do
   check_for_unpushed_changes
+  check_for_uncommited_changes
 
   deploy do
     invoke :'git:clone'
