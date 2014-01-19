@@ -169,6 +169,7 @@ task 'ember:list', 'list tagged relases of Ember since v1.0.0', (options) ->
 # Ember Data
 # ----------
 task 'ember-data:install', 'install latest Ember Data', (options) ->
+  options.channel or= 'beta'
   installEmberFiles(EMBER_DATA, 'ember-data.js', options)
 
 task 'ember-data:list', 'list tagged relases of Ember Data', (options) ->
