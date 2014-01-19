@@ -116,10 +116,15 @@ EMBER_DATA['tag'] =
   dev: "#{EMBER_BASE_URL}/tags/{{tag}}/ember-data.js"
 
 downloadFile = (src, dest) ->
-  file = fs.createWriteStream(dest)
   console.log('Downloading ' + src + ' to ' + dest)
+  data = ''
   request = http.get src, (response) ->
-    response.pipe file
+    response.on('data', (chunk) ->
+      data += chunk
+    )
+    response.on('end', ->
+      fs.writeFileSync(dest, data)
+    )
 
 downloadEmberFile = (src, dest) ->
   downloadFile(src, "vendor/ember/#{dest}")
