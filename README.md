@@ -83,7 +83,11 @@ Tapas with Ember comes with a [Mina][] [deployment script][].
 
 ## Frequently Asked Questions
 
-See [the FAQ][] in the Wiki.
+See [the FAQ][] in the Wiki for answers to questions like:
+
+* How do I Detect the Environment
+* How do I add another JavaScript / CoffeeScript Library?
+* How do I set Ember Feature Flags
 
 ## Updating Libraries
 
