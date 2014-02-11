@@ -19,6 +19,7 @@ exports.config =
           'vendor/scripts/console-polyfill.js'
           'vendor/scripts/jquery.js'
           'vendor/scripts/handlebars.js'
+          "vendor/scripts/ember_config.js"
           "vendor/ember/#{environment}/ember.js"
           "vendor/ember/#{environment}/ember-data.js"
           "vendor/ember/#{environment}/ember-model.js"
