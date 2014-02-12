@@ -12,8 +12,12 @@ exports.config =
       joinTo:
         'scripts/app.js':
           new RegExp("^(app|config/environments/#{environment}\.coffee)")
-        'scripts/vendor.js':
-          new RegExp("^vendor/(scripts|ember/#{environment})")
+        'scripts/vendor.js': new RegExp('^('+
+            [
+              "vendor/(scripts|ember/#{environment})"
+              'bower_components'
+            ].join('|') +
+          ')')
       order:
         before: [
           'vendor/scripts/console-polyfill.js'

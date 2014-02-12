@@ -1,0 +1,16 @@
+{
+  "name": "tapas-with-ember",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mutewinter/tapas-with-ember",
+  "authors": [],
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": { }
+}

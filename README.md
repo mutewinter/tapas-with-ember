@@ -18,6 +18,7 @@ installation scripts, environment-specific JS builds, generators, and
 * [CoffeeScript][]
 * [Stylus][]
 * [Handlebars](http://handlebarsjs.com)
+* [Bower](http://bower.io)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
 * _Optional_ [Ember Data][]
