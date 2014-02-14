@@ -147,7 +147,7 @@ scaffolt mixin <name>             →    app/mixins/<name>.coffee
 scaffolt model <name>             →    app/models/name.coffee
 scaffolt route <name>             →    app/routes/<name>.coffee
 scaffolt router                   →    app/config/router.coffee
-scaffolt template <name>          →    app/<name>.hbs
+scaffolt template <name>          →    app/template/<name>.hbs
 scaffolt view <name>              →    app/views/<name>.coffee
 ```
 
