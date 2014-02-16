@@ -191,12 +191,3 @@ EMBER_MODEL =
 task 'ember-model:install', 'install latest Ember Model', (options) ->
   downloadEmberFile EMBER_MODEL.dev, 'development/ember-model.js'
   downloadEmberFile EMBER_MODEL.prod, 'production/ember-model.js'
-
-# ----------
-# Handlebars
-# ----------
-task 'handlebars:install', 'install latest Handlebars', (options) ->
-  downloadFile(
-    'http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-latest.js',
-    'vendor/scripts/handlebars.js'
-  )

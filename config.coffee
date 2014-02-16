@@ -22,7 +22,7 @@ exports.config =
         before: [
           'vendor/scripts/console-polyfill.js'
           'vendor/scripts/jquery.js'
-          'vendor/scripts/handlebars.js'
+          'bower_components/handlebars/handlebars.js'
           "vendor/scripts/ember_config.js"
           "vendor/ember/#{environment}/ember.js"
           "vendor/ember/#{environment}/ember-data.js"

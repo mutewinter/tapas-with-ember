@@ -12,5 +12,7 @@
     "test",
     "tests"
   ],
-  "dependencies": { }
+  "dependencies": {
+    "handlebars": "v1.3.0"
+  }
 }
