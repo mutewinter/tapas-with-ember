@@ -16,7 +16,7 @@ installation scripts, environment-specific builds, generators, and
 * [Brunch 1.7.13][Brunch]
 * [Ember 1.3.2][Ember]
 * [Handlebars 1.3.0][Handlebars]
-* [CoffeeScript 1.7.1][]
+* [CoffeeScript 1.7.1][CoffeeScript]
 * [Stylus][]
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
