@@ -31,9 +31,9 @@
     "auto-reload-brunch": "~1.7.1",
     "ember-handlebars-brunch": "~1.2.0",
     "semver": "~2.2.1",
-    "adm-zip": "~0.4.3",
-    "github": "~0.1.12",
-    "digest-brunch": "~1.0.4"
+    "adm-zip": "~0.4.4",
+    "github": "~0.1.13",
+    "digest-brunch": "~1.0.5"
   },
   "devDependencies": {
     "qunitjs": "*",
