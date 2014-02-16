@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "brunch": "=1.7.13",
-    "coffee-script": "~1.6.3",
+    "coffee-script": "~1.7.1",
     "javascript-brunch": "~1.7.1",
-    "coffee-script-brunch": "~1.7.3",
+    "coffee-script-brunch": "~1.8.0",
     "css-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
     "uglify-js-brunch": "~1.7.6",
