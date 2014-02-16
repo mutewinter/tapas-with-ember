@@ -248,8 +248,6 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
   fork, [yet-another-ember-brunch][].
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 [brunch-with-ember-reloaded]: https://github.com/gcollazo/brunch-with-ember-reloaded
 [Stylus]: http://learnboost.github.io/stylus/
 [CoffeeScript]: http://coffeescript.org/
