@@ -65,6 +65,7 @@ task 'tapas:update', updateMessage, (options) ->
     'config.coffee'
     'generators/'
     'testem.json'
+    'bower.json'
   ]
   https.get url, (res) ->
     data = []
