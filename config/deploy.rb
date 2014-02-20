@@ -60,9 +60,8 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     queue 'echo "-----> Installing npm packages"'
     queue 'npm install'
-    # Uncomment if you're using bower
-    # queue 'echo "-----> Installing bower components"'
-    # queue 'bower install'
+    queue 'echo "-----> Installing bower components"'
+    queue 'bower install'
     queue 'echo "-----> Building with Tapas and Brunch"'
     queue 'cake build'
     queue 'echo "-----> Deleting files not need for deploy"'
