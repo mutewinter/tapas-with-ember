@@ -7,7 +7,7 @@ set :branch, 'master'
 set :user, 'deploy'
 set :forward_agent, true
 
-set :shared_paths, ['node_modules']
+set :shared_paths, ['node_modules', 'bower_components']
 
 task :environment do
   queue %{
@@ -17,8 +17,10 @@ task :environment do
 end
 
 task :setup => :environment do
-  queue! %[mkdir -p "#{deploy_to}/shared/node_modules"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/node_modules"]
+  settings.shared_paths.each do |path|
+    queue! %[mkdir -p "#{deploy_to}/shared/#{path}"]
+    queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/#{path}"]
+  end
 end
 
 def yes_or_exit(message)
