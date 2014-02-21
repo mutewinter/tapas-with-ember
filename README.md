@@ -11,18 +11,23 @@ installation scripts, environment-specific builds, generators, and
   </a>
 </p>
 
-## Technology
-
-* [Brunch 1.7.13][Brunch]
-* [Ember 1.3.2][Ember]
-* [Handlebars 1.3.0][Handlebars]
-* [CoffeeScript 1.7.1][CoffeeScript]
-* [Stylus][]
-* [HTML5 Boilerplate](http://html5boilerplate.com)
-* [Normalize.css](http://necolas.github.io/normalize.css/)
-* [Bower](http://bower.io)
-* _Optional_ [Ember Data][]
-* _Optional_ [Ember Model][]
+- [Features](#features)
+- [Setup](#setup)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Technology](#technology)
+- [Updating Libraries](#updating-libraries)
+    - [Ember](#install-latest-ember)
+    - [Ember Data](#install-latest-ember-data-beta)
+    - [Ember Model](#install-latest-ember-model)
+- [Generators](#generators)
+- [Compiling for Production](#compiling-for-production)
+- [Deploy](#deploy)
+- [Scripts](#scripts)
+- [Pow.cx](#powcx)
+- [Testing](#testing)
+- [Ember.vim Support](#embervim-support)
+- [Updating Tapas with Ember](#updating-tapas-with-ember)
+- [Thanks To](#thanks-to)
 
 ## Features
 
@@ -77,9 +82,23 @@ See [the FAQ][] in the Wiki for answers to questions like:
 * How do I add another JavaScript / CoffeeScript Library?
 * How do I set Ember Feature Flags?
 
+## Technology
+
+* [Brunch 1.7.13][Brunch]
+* [Ember 1.3.2][Ember]
+* [Handlebars 1.3.0][Handlebars]
+* [CoffeeScript 1.7.1][CoffeeScript]
+* [Stylus][]
+* [HTML5 Boilerplate](http://html5boilerplate.com)
+* [Normalize.css](http://necolas.github.io/normalize.css/)
+* [Bower](http://bower.io)
+* _Optional_ [Ember Data][]
+* _Optional_ [Ember Model][]
+
+
 ## Updating Libraries
 
-### Install Latest Ember
+### Ember
 
 Tapas with Ember ships with the latest release channel Ember. You can install
 other versions of Ember using the commands below.
@@ -93,7 +112,7 @@ cake ember:install
 
 _Note: `cake ember:list` displays the tagged releases since 1.0.0._
 
-### Install Latest Ember Data Beta
+### Ember Data
 
 ```bash
 cake ember-data:install
@@ -103,7 +122,7 @@ cake ember-data:install
 
 _Note: `cake ember-data:list` displays all tagged releases._
 
-### Install Latest Ember Model
+### Ember Model
 
 ```bash
 cake ember-model:install
@@ -173,7 +192,6 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 1. `echo 3333 > ~/.pow/<appname>`
 1. Start the server with `cake server`
 1. Open [tapas-with-ember.dev](http://<app-name>.dev)
-
 
 ## Testing
 
