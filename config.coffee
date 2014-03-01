@@ -14,7 +14,7 @@ exports.config =
           new RegExp("^(app|config/environments/#{environment}\.coffee)")
         'scripts/vendor.js': new RegExp('^('+
             [
-              "vendor/(scripts|ember/#{environment})"
+              "vendor/(scripts|ember/#{environment}|ember/config)"
               'bower_components'
             ].join('|') +
           ')')
@@ -23,8 +23,9 @@ exports.config =
           'vendor/scripts/console-polyfill.js'
           'vendor/scripts/jquery.js'
           'bower_components/handlebars/handlebars.js'
-          "vendor/scripts/ember_config.js"
+          "vendor/ember/config/before.coffee"
           "vendor/ember/#{environment}/ember.js"
+          "vendor/ember/config/after.coffee"
           "vendor/ember/#{environment}/ember-data.js"
           "vendor/ember/#{environment}/ember-model.js"
           # Anything else that depends on Ember
