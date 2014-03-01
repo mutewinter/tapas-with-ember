@@ -84,8 +84,8 @@ See [the FAQ][] in the Wiki for answers to questions like:
 
 ## Technology
 
-* [Brunch 1.7.13][Brunch]
 * [Ember 1.4.0][Ember]
+* [Brunch 1.7.13][Brunch]
 * [Handlebars 1.3.0][Handlebars]
 * [CoffeeScript 1.7.1][CoffeeScript]
 * [Stylus][]
