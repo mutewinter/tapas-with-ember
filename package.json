@@ -33,7 +33,8 @@
     "semver": "~2.2.1",
     "adm-zip": "~0.4.4",
     "github": "~0.1.13",
-    "digest-brunch": "~1.0.6"
+    "digest-brunch": "~1.0.6",
+    "bower": "~1.2.8"
   },
   "devDependencies": {
     "qunitjs": "*",
