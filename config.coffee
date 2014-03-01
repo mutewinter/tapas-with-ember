@@ -20,7 +20,6 @@ exports.config =
           ')')
       order:
         before: [
-          'vendor/scripts/console-polyfill.js'
           'vendor/scripts/jquery.js'
           'bower_components/handlebars/handlebars.js'
           "vendor/ember/config/before.coffee"
