@@ -176,11 +176,14 @@ to your own server.
 The following [`cake`](/Cakefile) scripts are provided.
 
 ```
-cake server               # start the brunch server in development
+cake server               # start the Brunch server in development
 cake watch                # continiously rebuild app without a server
 cake build                # build for production (delete public folder first)
+cake test                 # run the tests
 cake ember:install        # install latest Ember
+cake ember:list           # list the known versions of Ember
 cake ember-data:install   # install latest Ember Data
+cake ember-data:list      # list the known versions of Ember Data
 cake ember-model:install  # install latest Ember Model
 cake handlebars:install   # install latest Handlebars
 ```
