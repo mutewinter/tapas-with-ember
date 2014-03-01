@@ -32,9 +32,9 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'styles/app.css': /^(app|vendor)/
+        'styles/app.css': /^(app|vendor|bower_components)/
       order:
-        before: ['vendor/styles/normalize.css']
+        before: ['bower_components/normalize-css/normalize.css']
 
     templates:
       precompile: true
