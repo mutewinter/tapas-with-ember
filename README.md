@@ -86,12 +86,13 @@ See [the FAQ][] in the Wiki for answers to questions like:
 
 * [Ember 1.4.0][Ember]
 * [Brunch 1.7.13][Brunch]
+* [Bower](http://bower.io)
 * [Handlebars 1.3.0][Handlebars]
+* [jQuery 1.11.0](http://jquery.com)
 * [CoffeeScript 1.7.1][CoffeeScript]
 * [Stylus][]
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
-* [Bower](http://bower.io)
 * _Optional_ [Ember Data][]
 * _Optional_ [Ember Model][]
 
