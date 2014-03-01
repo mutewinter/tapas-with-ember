@@ -177,6 +177,7 @@ The following [`cake`](/Cakefile) scripts are provided.
 
 ```
 cake server               # start the brunch server in development
+cake watch                # continiously rebuild app without a server
 cake build                # build for production (delete public folder first)
 cake ember:install        # install latest Ember
 cake ember-data:install   # install latest Ember Data

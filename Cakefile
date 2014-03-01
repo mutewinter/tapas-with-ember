@@ -28,9 +28,10 @@ spawnBrunch = (flags, env) ->
   brunch.stdout.on 'data', (data) -> console.log data.toString().trim()
   brunch.stderr.on 'data', (data) -> console.log data.toString().trim()
 
+runBrunchWatch = (options, shouldStartServer) ->
+  flags = ['w']
+  flags.push '-s' if shouldStartServer
 
-task 'server', 'start the brunch server in development', (options) ->
-  flags = ['w', '-s']
   if options.production?
     flags.push('-P')
     process.env.BRUNCH_ENV = 'production'
@@ -40,6 +41,12 @@ task 'server', 'start the brunch server in development', (options) ->
     flags.push options.port
 
   spawnBrunch flags, process.env
+
+task 'server', 'start the brunch server in development', (options) ->
+  runBrunchWatch(options, true)
+
+task 'watch', 'build the app continuously without a server', (options) ->
+  runBrunchWatch(options, false)
 
 task 'build', 'build for production (delete public folder first)', ->
   exec('rm -rf ./public')
