@@ -78,9 +78,10 @@ latest Ember Data or Ember Model using the `cake` scripts below.
 
 See [the FAQ][] in the Wiki for answers to questions like:
 
-* How do I Detect the Environment?
-* How do I add another JavaScript / CoffeeScript Library?
-* How do I set Ember Feature Flags?
+* How do I add a JavaScript / CSS Library?
+* How do I addd [Bootstrap](http://getbootstrap.com/)?
+* How do I detect the environment?
+* How do I set Ember feature flags?
 
 ## Technology
 
