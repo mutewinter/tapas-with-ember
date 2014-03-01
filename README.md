@@ -1,4 +1,4 @@
-# Tapas with Ember
+# Tapas with Ember [![NPM Dependency Status](https://gemnasium.com/mutewinter/tapas-with-ember.png)](https://gemnasium.com/mutewinter/tapas-with-ember)
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific builds, generators, and
