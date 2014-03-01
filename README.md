@@ -55,7 +55,7 @@ Before using Tapas with Ember you will need to install [Node][],
 [CoffeeScript][], [Brunch][], and [Bower][].
 
 ```
-npm install -g brunch coffee bower
+npm install -g brunch coffee-script bower
 ```
 
 Now that you've got Brunch installed, you're three commands away from a running
