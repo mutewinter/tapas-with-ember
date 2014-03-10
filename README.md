@@ -170,6 +170,7 @@ to your own server.
 
 1. Install Mina by running `gem install mina`
 1. Fill in your credentials in [`config/deploy.rb`][deployment script]
+1. Setup your server, I use [Nginx][] with [this config][nginx config]
 1. Run `mina setup`
 1. Run `mina deploy`
 
@@ -292,3 +293,5 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [digest-brunch]: https://github.com/mutewinter/digest-brunch
 [Bower]: http://bower.io
 [Handlebars]: http://handlebarsjs.com
+[Nginx]: http://nginx.org/
+[nginx config]: https://github.com/mutewinter/tapas-with-ember/wiki/nginx
