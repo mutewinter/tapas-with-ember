@@ -198,7 +198,7 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 1. Install [Pow.cx](http://pow.cx/)
 1. `echo 3333 > ~/.pow/<appname>`
 1. Start the server with `cake server`
-1. Open [tapas-with-ember.dev](http://<app-name>.dev)
+1. Open <http://appname.dev>
 
 ## Testing
 
