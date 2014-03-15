@@ -62,7 +62,7 @@
   "app/serializers/*.coffee": {
     "type": "serializer",
     "test": "tests/serializers/%s.coffee",
-    "template": "module.exports = App.%SSerializer = DS.RESTSeriazer.extend()"
+    "template": "module.exports = App.%SSerializer = DS.RESTSerializer.extend()"
   },
 
   "app/config/*.coffee": {
