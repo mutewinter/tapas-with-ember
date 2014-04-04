@@ -48,8 +48,7 @@ task 'server', 'start the brunch server in development', (options) ->
 task 'watch', 'build the app continuously without a server', (options) ->
   runBrunchWatch(options, false)
 
-task 'build', 'build for production (delete public folder first)', ->
-  exec('rm -rf ./public')
+task 'build', 'build for production', ->
   process.env.BRUNCH_ENV = 'production'
   spawnBrunch ['b', '-P'], process.env
 
