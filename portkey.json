@@ -36,7 +36,7 @@
   },
   "app/helpers/*.coffee": {
     "type": "helper",
-    "template": "Ember.Handlebars.helper '%s', (person) ->\n  \"#{person.get('firstName')} #{person.get('lastName')}\"\n, 'firstName', 'lastName'",
+    "template": "Ember.Handlebars.helper '%s', (value, options) ->",
     "test": "tests/helpers/%s_test.coffee"
   },
   "app/initializers/*.coffee": {
