@@ -85,7 +85,7 @@ See [the FAQ][] in the Wiki for answers to questions like:
 
 ## Technology
 
-* [Ember 1.4.0][Ember]
+* [Ember 1.5.0][Ember]
 * [Brunch 1.7.13][Brunch]
 * [Bower](http://bower.io)
 * [Handlebars 1.3.0][Handlebars]
@@ -107,7 +107,7 @@ other versions of Ember using the commands below.
 
 ```bash
 cake ember:install
-# cake -t "v1.4.0" ember:install # for v1.4.0 tagged release
+# cake -t "v1.5.0" ember:install # for v1.5.0 tagged release
 # cake -c "beta" ember:install # for beta
 # cake -c "canary" ember:install # for canary
 ```
