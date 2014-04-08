@@ -52,10 +52,19 @@ def check_for_uncommited_changes
   yes_or_exit 'Uncommitted changes, continue?' if uncommitted_changes
 end
 
+def not_on_master
+  `git rev-parse --abbrev-ref HEAD`.strip != 'master'
+end
+
+def check_for_master
+  yes_or_exit 'Not on master branch, continue?' if not_on_master
+end
+
 desc "Deploys the latest commit from your git remote to the server."
 task :deploy => :environment do
   check_for_unpushed_changes
   check_for_uncommited_changes
+  check_for_master
 
   deploy do
     invoke :'git:clone'
