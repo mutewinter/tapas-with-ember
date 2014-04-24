@@ -131,6 +131,8 @@ _Note: `cake ember-data:list` displays all tagged releases._
 cake ember-model:install
 ```
 
+_Note: Ember Model can not be used with Ember Data._
+
 ## Generators
 
 This skeleton makes use of [scaffolt][] generators to help you create common
