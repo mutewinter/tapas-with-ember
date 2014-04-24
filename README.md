@@ -70,9 +70,10 @@ cake server
 Open [`localhost:3333`](http://localhost:3333) and check out your brand new
 Ember app! Every time you save a file, the browser will automatically refresh.
 
-Tapas with Ember runs the latest release channel Ember. You can update to Beta
-or Canary builds using `cake ember:install`. It's also easy to install the
-latest Ember Data or Ember Model using the `cake` scripts below.
+Tapas with Ember runs the latest release channel Ember and latest beta of Ember
+Data. You can update to Beta or Canary builds using `cake ember:install`. It's
+also easy to install the latest Ember Data or Ember Model using the `cake`
+scripts below.
 
 ## Frequently Asked Questions
 
@@ -86,6 +87,7 @@ See [the FAQ][] in the Wiki for answers to questions like:
 ## Technology
 
 * [Ember 1.5.0][Ember]
+* [Ember Data 1.0.0-beta.7][Ember Data]
 * [Brunch 1.7.13][Brunch]
 * [Bower](http://bower.io)
 * [Handlebars 1.3.0][Handlebars]
@@ -94,7 +96,6 @@ See [the FAQ][] in the Wiki for answers to questions like:
 * [Stylus][]
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
-* _Optional_ [Ember Data][]
 * _Optional_ [Ember Model][]
 
 
@@ -118,7 +119,7 @@ _Note: `cake ember:list` displays the tagged releases since 1.0.0._
 
 ```bash
 cake ember-data:install
-# cake -t "v1.0.0-beta.4" ember-data:install # for v1.0.0-beta.4 tagged release
+# cake -t "v1.0.0-beta.7" ember-data:install # for v1.0.0-beta.7 tagged release
 # cake -c "canary" ember-data:install # for canary
 ```
 
