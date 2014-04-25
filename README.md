@@ -80,7 +80,7 @@ scripts below.
 See [the FAQ][] in the Wiki for answers to questions like:
 
 * How do I add a JavaScript / CSS Library?
-* How do I addd [Bootstrap](http://getbootstrap.com/)?
+* How do I add [Bootstrap](http://getbootstrap.com/)?
 * How do I detect the environment?
 * How do I set Ember feature flags?
 
