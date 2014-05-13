@@ -67,7 +67,7 @@ cd <appname>
 cake server
 ```
 
-Open [`localhost:3333`](http://localhost:3333) and check out your brand new
+Open [`localhost:7435`](http://localhost:7435) and check out your brand new
 Ember app! Every time you save a file, the browser will automatically refresh.
 
 Tapas with Ember runs the latest release channel Ember and latest beta of Ember
@@ -199,7 +199,7 @@ cake handlebars:install   # install latest Handlebars
 To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 
 1. Install [Pow.cx](http://pow.cx/)
-1. `echo 3333 > ~/.pow/<appname>`
+1. `echo 7435 > ~/.pow/<appname>`
 1. Start the server with `cake server`
 1. Open <http://appname.dev>
 

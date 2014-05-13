@@ -52,6 +52,9 @@ exports.config =
       else
         startsWith sysPath.basename(path), '_'
 
+  server:
+    port: 7435
+
   overrides:
     production:
       optimize: true
