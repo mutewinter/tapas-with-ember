@@ -3,9 +3,14 @@ require 'mina/git'
 set :domain, 'sweet-domain.io'
 set :deploy_to, '/srv/project_name'
 set :repository, 'git@github.com:you/project_name'
-set :branch, 'master'
 set :user, 'deploy'
 set :forward_agent, true
+
+if ENV['branch'].to_s.strip != ''
+  set :branch, ENV['branch']
+else
+  set :branch, 'master'
+end
 
 set :shared_paths, ['node_modules', 'bower_components']
 
