@@ -33,7 +33,7 @@ def yes_or_exit(message)
 end
 
 def unpushed_commits
-  `git log --oneline origin/master..HEAD | wc -l`.to_i
+  `git log --oneline origin/#{settings.branch}..HEAD | wc -l`.to_i
 end
 
 def uncommitted_changes
