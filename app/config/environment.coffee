@@ -1,6 +1,6 @@
 # Require all of the config/environments files. /config.coffee controls which
 # environment files will be loaded.
-window.require.list().filter (module) ->
+window.require.list().forEach (module) ->
   require(module) if new RegExp("^config/environments/").test(module)
 
 Environment = Ember.Object.extend
