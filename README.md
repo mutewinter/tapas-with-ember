@@ -1,4 +1,4 @@
-# Tapas with Ember [![NPM Dependency Status](https://gemnasium.com/mutewinter/tapas-with-ember.png)](https://gemnasium.com/mutewinter/tapas-with-ember)
+# Tapas with Ember
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific builds, generators, and
@@ -98,6 +98,8 @@ See [the FAQ][] in the Wiki for answers to questions like:
 * [Normalize.css](http://necolas.github.io/normalize.css/)
 * _Optional_ [Ember Model][]
 
+[![NPM Dependency Status][gemnasium-i]][gemnasium] _This will always say out of
+date because I'm using jQuery 1.X for IE compatibility._
 
 ## Updating Libraries
 
@@ -298,3 +300,5 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [Handlebars]: http://handlebarsjs.com
 [Nginx]: http://nginx.org/
 [nginx config]: https://github.com/mutewinter/tapas-with-ember/wiki/nginx
+[gemnasium]: https://gemnasium.com/mutewinter/tapas-with-ember
+[gemnasium-i]: http://img.shields.io/gemnasium/mutewinter/tapas-with-ember.svg?style=flat
