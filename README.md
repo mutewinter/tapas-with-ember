@@ -87,7 +87,7 @@ See [the FAQ][] in the Wiki for answers to questions like:
 ## Technology
 
 * [Ember 1.5.1][Ember]
-* [Ember Data 1.0.0-beta.7][Ember Data]
+* [Ember Data 1.0.0-beta.8][Ember Data]
 * [Brunch 1.7.13][Brunch]
 * [Bower](http://bower.io)
 * [Handlebars 1.3.0][Handlebars]
@@ -121,7 +121,7 @@ _Note: `cake ember:list` displays the tagged releases since 1.0.0._
 
 ```bash
 cake ember-data:install
-# cake -t "v1.0.0-beta.7" ember-data:install # for v1.0.0-beta.7 tagged release
+# cake -t "v1.0.0-beta.8" ember-data:install # for v1.0.0-beta.8 tagged release
 # cake -c "canary" ember-data:install # for canary
 ```
 
