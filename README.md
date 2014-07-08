@@ -1,4 +1,4 @@
-# Tapas with Ember
+# Tapas with Ember [![Build Status][travis-badge]][travis]
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific builds, generators, and
@@ -326,3 +326,5 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [nginx config]: https://github.com/mutewinter/tapas-with-ember/wiki/nginx
 [gemnasium]: https://gemnasium.com/mutewinter/tapas-with-ember
 [gemnasium-i]: http://img.shields.io/gemnasium/mutewinter/tapas-with-ember.svg?style=flat
+[travis]: https://travis-ci.org/mutewinter/tapas-with-ember
+[travis-badge]: https://img.shields.io/travis/mutewinter/tapas-with-ember.svg?style=flat
