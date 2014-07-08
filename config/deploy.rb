@@ -1,10 +1,16 @@
 require 'mina/git'
 
-set :domain, 'sweet-domain.io'
+set :domain, 'example.com'
 set :deploy_to, '/srv/project_name'
 set :repository, 'git@github.com:you/project_name'
 set :user, 'deploy'
 set :forward_agent, true
+
+if ENV['to'].to_s.strip != ''
+  set :environment, ENV['to']
+else
+  set :environment, 'staging'
+end
 
 if ENV['branch'].to_s.strip != ''
   set :branch, ENV['branch']
@@ -57,19 +63,32 @@ def check_for_uncommited_changes
   yes_or_exit 'Uncommitted changes, continue?' if uncommitted_changes
 end
 
-def not_on_master
-  `git rev-parse --abbrev-ref HEAD`.strip != 'master'
+def not_on_same_branch
+  `git rev-parse --abbrev-ref HEAD`.strip != settings.branch
 end
 
-def check_for_master
-  yes_or_exit 'Not on master branch, continue?' if not_on_master
+def check_for_same_branch
+  if not_on_same_branch
+    yes_or_exit green(settings.branch) +
+      " branch not currently checked out, continue?"
+  end
+end
+
+def confirm_deploy
+  yes_or_exit "Deploying the #{green settings.branch} branch to " +
+    "#{green settings.environment}. Continue?"
+end
+
+def green(text)
+  "\033[#{32}m#{text}\033[0m"
 end
 
 desc "Deploys the latest commit from your git remote to the server."
 task :deploy => :environment do
+  confirm_deploy
+  check_for_same_branch
   check_for_unpushed_changes
   check_for_uncommited_changes
-  check_for_master
 
   deploy do
     invoke :'git:clone'
@@ -79,7 +98,7 @@ task :deploy => :environment do
     queue 'echo "-----> Installing bower components"'
     queue 'bower install'
     queue 'echo "-----> Building with Tapas and Brunch"'
-    queue 'cake build'
+    queue "BRUNCH_ENV=#{settings.environment} cake build"
     queue 'echo "-----> Deleting files not need for deploy"'
     queue 'ls -1 | grep -v public | xargs rm -rf'
   end
