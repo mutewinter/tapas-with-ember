@@ -8,6 +8,7 @@ if env.get('isDevelopment')
     LOG_BINDINGS:                   true
     LOG_VIEW_LOOKUPS:               true
     LOG_ACTIVE_GENERATION:          true
+    LOG_RESOLVER:                   false
 
   Ember.RSVP.configure 'onerror', (error) ->
     if Ember.typeOf(error) is 'object'
