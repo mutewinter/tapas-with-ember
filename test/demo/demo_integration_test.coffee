@@ -1,6 +1,6 @@
 test 'welcome message present', ->
   visit('/').then ->
-    ok find('h2:contains("Welcome to Ember.js")').length
+    ok find('.welcome-message').length
 
 test 'list items present', ->
   visit('/').then ->
@@ -9,4 +9,4 @@ test 'list items present', ->
 
 test 'environment present', ->
   visit('/').then ->
-    ok find('p:contains("test")').length, "has environment"
+    ok find('p:contains("test")').length, 'has environment'

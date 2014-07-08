@@ -13,6 +13,7 @@ installation scripts, environment-specific builds, generators, and
 
 - [Features](#features)
 - [Setup](#setup)
+- [Testing](#testing)
 - [Frequently Asked Questions](#frequently-asked-questions)
 - [Technology](#technology)
 - [Updating Libraries](#updating-libraries)
@@ -24,7 +25,6 @@ installation scripts, environment-specific builds, generators, and
 - [Deploy](#deploy)
 - [Scripts](#scripts)
 - [Pow.cx](#powcx)
-- [Testing](#testing)
 - [Ember.vim Support](#embervim-support)
 - [Updating Tapas with Ember](#updating-tapas-with-ember)
 - [Thanks To](#thanks-to)
@@ -74,6 +74,50 @@ Tapas with Ember runs the latest release channel Ember and latest beta of Ember
 Data. You can update to Beta or Canary builds using `cake ember:install`. It's
 also easy to install the latest Ember Data or Ember Model using the `cake`
 scripts below.
+
+## Testing
+
+To run run tests headlessly you'll need need to install
+[phantomjs](https://github.com/ariya/phantomjs).
+
+```
+brew update && brew install phantomjs
+```
+
+### Running Tests Once
+
+```
+npm test
+```
+
+This command will install all dependencies, build the application in the test
+environment, and run the tests.
+
+### Running Tests Automatically
+
+In two terminal sessions, run these commands:
+
+```
+npm run-script test:watch
+cake test:watch
+```
+
+Testem will now rerun tests every time your app code changes. You can switch
+`test:watch` to `test:server` if you'd also like to manually interact with the
+app on <http://localhost:7435>.
+
+### Testing in Other Browsers
+
+If you want to run your tests on other browsers, modify your `testem.yml` file
+to include the additional browsers. For example:
+
+```
+launch_in_dev: ['PhantomJS', 'Chrome', 'Firefox', 'Safari']
+```
+
+You can see a list of available launchers by running the command `testem
+launchers`.
+
 
 ## Frequently Asked Questions
 
@@ -184,16 +228,25 @@ to your own server.
 The following [`cake`](/Cakefile) scripts are provided.
 
 ```
-cake server               # start the Brunch server in development
-cake watch                # continiously rebuild app without a server
-cake build                # build for production (delete public folder first)
-cake test                 # run the tests
+cake server               # start the brunch server in development
+cake watch                # build the app continuously without a server
+cake build                # build for production
+cake build:test           # build for test
+cake test:watch           # run brunch in test environment and watch for changes
+cake test:server          # run brunch in test environment, watch for changes, and run server
+cake tapas:update         # update Tapas to latest (Cakefile, package.json, portkey.json, config.coffee, generators/*)
 cake ember:install        # install latest Ember
-cake ember:list           # list the known versions of Ember
+cake ember:list           # list tagged relases of Ember since v1.0.0
 cake ember-data:install   # install latest Ember Data
-cake ember-data:list      # list the known versions of Ember Data
+cake ember-data:list      # list tagged relases of Ember Data
 cake ember-model:install  # install latest Ember Model
-cake handlebars:install   # install latest Handlebars
+```
+
+The following `npm` scripts are provided
+
+```
+npm test                  # Install dependencies, build for test, run tests
+npm run-script test:watch # Run tests continuously when files change
 ```
 
 ## Pow.cx
@@ -204,35 +257,6 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 1. `echo 7435 > ~/.pow/<appname>`
 1. Start the server with `cake server`
 1. Open <http://appname.dev>
-
-## Testing
-
-To run you will need [Testem](https://github.com/airportyh/testem) and you will
-need to install [phantomjs](https://github.com/ariya/phantomjs).
-
-```
-brew update && brew install phantomjs
-```
-
-To run tests continiously as you write code and tests (for now) you must open
-two terminal windows. One running brunch to continiously build the application
-and the other running testem.
-
-```
-cake test # starts brunch in test environment
-npm test  # starts testem
-```
-
-If you want to run your tests on other browsers, modify your `testem.json` file
-to include the additional browsers. For example:
-
-```
-"launch_in_dev": ["PhantomJS", "Chrome", "Firefox", "Safari"]
-```
-
-You can see a list of available launchers by running the command `testem
-launchers`.
-
 
 ## Ember.vim Support
 

@@ -52,7 +52,17 @@ task 'build', 'build for production', ->
   process.env.BRUNCH_ENV = 'production'
   spawnBrunch ['b', '-P'], process.env
 
-task 'test', 'run brunch in the test environment', ->
+task 'build:test', 'build for test', ->
+  process.env.BRUNCH_ENV = 'test'
+  spawnBrunch ['b'], process.env
+
+task 'test:watch', 'run brunch in test environment and watch for changes', ->
+  flags = ['w']
+  process.env.BRUNCH_ENV = 'test'
+  spawnBrunch flags, process.env
+
+task 'test:server',
+'run brunch in test environment, watch for changes, and run server', ->
   flags = ['w', '-s']
   process.env.BRUNCH_ENV = 'test'
   spawnBrunch flags, process.env

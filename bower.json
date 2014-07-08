@@ -16,5 +16,8 @@
     "handlebars": "~1.3.0",
     "jquery": "~1.11.1",
     "normalize-css": "~3.0.1"
+  },
+  "devDependencies": {
+    "ember-qunit": "~0.1.8"
   }
 }

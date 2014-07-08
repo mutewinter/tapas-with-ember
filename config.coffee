@@ -4,9 +4,13 @@ environment = process.env.BRUNCH_ENV ? 'development'
 
 console.log "Running Brunch in #{environment} environment"
 
+publicFolder = 'public'
+publicFolder = 'tmp/test-public' if process.env.BRUNCH_ENV is 'test'
+
 exports.config =
   paths:
     watched: ['app', 'test', 'vendor', 'config']
+    public: publicFolder
   files:
     javascripts:
       joinTo:

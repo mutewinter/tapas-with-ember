@@ -87,8 +87,10 @@
   "app/styles/**.styl": {
     "type": "style"
   },
-
   "test/**_test.coffee": {
-    "type": "test"
+    "type": "tests"
+  },
+  "test/*.coffee": {
+    "type": "testhelper"
   }
 }
