@@ -5,7 +5,7 @@ require 'config/router'
 # Load all modules in order automagically. Ember likes things to work this
 # way so everything is in the App.* namespace.
 folderOrder = [
-  'initializers', 'utils', 'mixins', 'adapters', 'serializers', 'routes',
+  'initializers', 'utilities', 'mixins', 'adapters', 'serializers', 'routes',
   'models', 'views', 'controllers', 'helpers', 'templates', 'components'
 ]
 

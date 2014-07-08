@@ -255,7 +255,7 @@ commands:
 :Estyle <name>       → app/styles/<name>.styl
 :Etemplate <name>    → app/templates/<name>.hbs
 :Etest <name>        → test/<name>_test.coffee
-:Eutility <name>     → app/utility/<name>.coffee
+:Eutility <name>     → app/utilities/<name>.coffee
 :Eview <name>        → app/views/<name>.coffee
 ```
 

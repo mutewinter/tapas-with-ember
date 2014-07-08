@@ -75,10 +75,10 @@
     "type": "initialize"
   },
 
-  "app/utils/*.coffee": {
+  "app/utilities/*.coffee": {
     "type": "utility",
-    "test": "tests/utility/%s.coffee",
-    "template": "module.exports = %S = () ->\n  \n\n"
+    "test": "tests/utilities/%s.coffee",
+    "template": "module.exports = ->\n  \n\n"
   },
 
   "app/assets/**": {
