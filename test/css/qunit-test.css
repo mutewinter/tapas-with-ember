@@ -1,5 +1,6 @@
 #ember-testing {
   width: 100%;
+  overflow: scroll;
 
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
