@@ -291,7 +291,7 @@ Tapas with Ember has a built-in update script.
 cake tapas:update
 ```
 
-It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
+It updates and **overwrites** `Cakefile`, `package.json`, `portkey.json`,
 `config.coffee`, `generators/*`.
 
 ## Thanks To
