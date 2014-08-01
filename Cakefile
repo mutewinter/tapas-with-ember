@@ -49,7 +49,7 @@ task 'watch', 'build the app continuously without a server', (options) ->
   runBrunchWatch(options, false)
 
 task 'build', 'build for production', ->
-  process.env.BRUNCH_ENV = 'production'
+  process.env.BRUNCH_ENV or= 'production'
   spawnBrunch ['b', '-P'], process.env
 
 task 'build:test', 'build for test', ->
