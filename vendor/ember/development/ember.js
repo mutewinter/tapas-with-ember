@@ -5,7 +5,7 @@
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   1.7.0
+ * @version   1.7.1
  */
 
 (function() {
@@ -5222,14 +5222,16 @@ define("ember-handlebars/controls",
           inputType = _resolveOption(this, options, 'type'),
           onEvent = hash.on;
 
-      delete hash.type;
-      delete hash.on;
-
       if (inputType === 'checkbox') {
+        delete hash.type;
+        delete types.type;
+
         Ember.assert("{{input type='checkbox'}} does not support setting `value=someBooleanValue`; you must use `checked=someBooleanValue` instead.", options.hashTypes.value !== 'ID');
+
         return helpers.view.call(this, Checkbox, options);
       } else {
-        if (inputType) { hash.type = inputType; }
+        delete hash.on;
+
         hash.onEvent = onEvent || 'enter';
         return helpers.view.call(this, TextField, options);
       }
@@ -13001,7 +13003,7 @@ define("ember-metal/core",
 
       @class Ember
       @static
-      @version 1.7.0
+      @version 1.7.1
     */
 
     if ('undefined' === typeof Ember) {
@@ -13028,10 +13030,10 @@ define("ember-metal/core",
     /**
       @property VERSION
       @type String
-      @default '1.7.0'
+      @default '1.7.1'
       @static
     */
-    Ember.VERSION = '1.7.0';
+    Ember.VERSION = '1.7.1';
 
     /**
       Standard environmental variables. You can define these in a global `EmberENV`
@@ -16364,8 +16366,8 @@ define("ember-metal/properties",
         defineProperty(object, deprecatedKey, {
             configurable: true,
             enumerable: false,
-            set: function(value) { deprecate(); set(object, newKey, value); },
-            get: function() { deprecate(); return get(object, newKey); }
+            set: function(value) { deprecate(); set(this, newKey, value); },
+            get: function() { deprecate(); return get(this, newKey); }
         });
       }
     }
@@ -39125,8 +39127,8 @@ define("ember-views/views/container_view",
     __exports__["default"] = ContainerView;
   });
 define("ember-views/views/core_view",
-  ["ember-views/views/states","ember-runtime/system/object","ember-runtime/mixins/evented","ember-runtime/mixins/action_handler","ember-metal/properties","ember-metal/property_get","ember-metal/property_set","ember-metal/computed","ember-metal/utils","ember-metal/instrumentation","ember-views/system/render_buffer","exports"],
-  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__, __dependency8__, __dependency9__, __dependency10__, __dependency11__, __exports__) {
+  ["ember-views/views/states","ember-runtime/system/object","ember-runtime/mixins/evented","ember-runtime/mixins/action_handler","ember-metal/property_get","ember-metal/computed","ember-metal/utils","ember-metal/instrumentation","ember-views/system/render_buffer","exports"],
+  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__, __dependency8__, __dependency9__, __exports__) {
     "use strict";
     var cloneStates = __dependency1__.cloneStates;
     var states = __dependency1__.states;
@@ -39134,18 +39136,15 @@ define("ember-views/views/core_view",
     var Evented = __dependency3__["default"];
     var ActionHandler = __dependency4__["default"];
 
-    var defineProperty = __dependency5__.defineProperty;
-    var deprecateProperty = __dependency5__.deprecateProperty;
-    var get = __dependency6__.get;
-    var set = __dependency7__.set;
-    var computed = __dependency8__.computed;
+    var get = __dependency5__.get;
+    var computed = __dependency6__.computed;
 
-    var typeOf = __dependency9__.typeOf;
+    var typeOf = __dependency7__.typeOf;
 
-    var instrument = __dependency10__.instrument;
+    var instrument = __dependency8__.instrument;
 
 
-    var renderBuffer = __dependency11__["default"];
+    var renderBuffer = __dependency9__["default"];
 
     /**
       `Ember.CoreView` is an abstract class that exists to give view-like behavior
@@ -39171,9 +39170,6 @@ define("ember-views/views/core_view",
         this._super();
         this._transitionTo('preRender');
         this._isVisible = get(this, 'isVisible');
-
-        deprecateProperty(this, 'states', '_states');
-        deprecateProperty(this, 'state', '_state');
       },
 
       /**
@@ -39796,6 +39792,7 @@ define("ember-views/views/view",
     var isArray = __dependency11__.isArray;
     var isNone = __dependency14__.isNone;
     var Mixin = __dependency13__.Mixin;
+    var deprecateProperty = __dependency10__.deprecateProperty;
     var emberA = __dependency15__.A;
 
     var dasherize = __dependency16__.dasherize;
@@ -41937,6 +41934,8 @@ define("ember-views/views/view",
       }
 
     });
+    deprecateProperty(View.prototype, 'state', '_state');
+    deprecateProperty(View.prototype, 'states', '_states');
 
     /*
       Describe how the specified actions should behave in the various
