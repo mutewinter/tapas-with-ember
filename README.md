@@ -130,13 +130,13 @@ See [the FAQ][] in the Wiki for answers to questions like:
 
 ## Technology
 
-* [Ember 1.7.1][Ember]
+* [Ember 1.8.0][Ember]
 * [Ember Data 1.0.0-beta.9][Ember Data]
-* [Brunch 1.7.13][Brunch]
+* [Brunch 1.8.03][Brunch]
 * [Bower](http://bower.io)
 * [Handlebars 1.3.0][Handlebars]
 * [jQuery 1.11.0](http://jquery.com)
-* [CoffeeScript 1.7.1][CoffeeScript]
+* [CoffeeScript 1.8.0][CoffeeScript]
 * [Stylus][]
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.io/normalize.css/)
@@ -154,7 +154,7 @@ other versions of Ember using the commands below.
 
 ```bash
 cake ember:install
-# cake -t "v1.7.1" ember:install # for v1.7.1 tagged release
+# cake -t "v1.8.0" ember:install # for v1.8.0 tagged release
 # cake -c "beta" ember:install # for beta
 # cake -c "canary" ember:install # for canary
 ```
