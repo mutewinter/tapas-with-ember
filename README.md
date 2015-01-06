@@ -130,7 +130,7 @@ See [the FAQ][] in the Wiki for answers to questions like:
 
 ## Technology
 
-* [Ember 1.8.1][Ember]
+* [Ember 1.9.1][Ember]
 * [Ember Data 1.0.0-beta.9][Ember Data]
 * [Brunch 1.8.03][Brunch]
 * [Bower](http://bower.io)
@@ -154,7 +154,7 @@ other versions of Ember using the commands below.
 
 ```bash
 cake ember:install
-# cake -t "v1.8.1" ember:install # for v1.8.1 tagged release
+# cake -t "v1.9.1" ember:install # for v1.9.1 tagged release
 # cake -c "beta" ember:install # for beta
 # cake -c "canary" ember:install # for canary
 ```

@@ -30,7 +30,7 @@
     "uglify-js-brunch": "~1.7.6",
     "clean-css-brunch": "~1.7.1",
     "auto-reload-brunch": "~1.7.1",
-    "ember-handlebars-brunch": "~1.2.0",
+    "ember-handlebars-brunch": "git+https://github.com/mutewinter/ember-handlebars-brunch.git#f63009b224",
     "semver": "^2.3.0",
     "adm-zip": "~0.4.4",
     "github": "^0.2.0",
