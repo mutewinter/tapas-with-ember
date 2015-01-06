@@ -1,3 +1,8 @@
+# DEPRECATION WARNING
+
+Tapas with Ember will not be maintained after Ember 2.0 is released. Please use
+[Ember CLI](http://www.ember-cli.com/) instead.
+
 # Tapas with Ember [![Build Status][travis-badge]][travis]
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
